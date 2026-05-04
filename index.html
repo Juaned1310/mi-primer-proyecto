@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sérum Despigmentante | Guatemala</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --dorado: #C4956A;
+      --dorado-oscuro: #A07850;
+      --crema: #F8EDE3;
+      --rosa: #8B4B6B;
+      --cafe: #3D2B1F;
+      --blanco: #FFFFFF;
+    }
+    body { font-family: 'Georgia', serif; background-color: var(--crema); color: var(--cafe); }
+
+    /* BARRA SUPERIOR */
+    .barra-top {
+      background: linear-gradient(90deg, var(--rosa), #6B3055);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--blanco);
+      text-align: center;
+      padding: 22px 20px;
+      border-bottom: 3px solid var(--dorado);
+    }
+    header h1 { font-size: 26px; color: var(--dorado-oscuro); letter-spacing: 3px; text-transform: uppercase; }
+    header p { font-size: 12px; color: var(--rosa); letter-spacing: 2px; margin-top: 5px; }
+
+    /* HOOK */
+    .hook {
+      background: linear-gradient(135deg, #2C1A2E 0%, #4A2040 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hook-badge {
+      display: inline-block;
+      background: var(--dorado);
+      color: white;
+      padding: 7px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .hook h2 { font-size: 38px; line-height: 1.3; max-width: 720px; margin: 0 auto 20px; }
+    .hook h2 span { color: var(--dorado); }
+    .hook > p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto 40px; line-height: 1.8; }
+    .foto-principal-wrap { position: relative; display: inline-block; margin-bottom: 30px; }
+    .foto-principal {
+      width: 280px; height: 280px; object-fit: cover;
+      border-radius: 50%; border: 6px solid var(--dorado);
+      box-shadow: 0 0 40px rgba(196,149,106,0.5); display: block;
+    }
+    .foto-badge-encima {
+      position: absolute; bottom: 10px; right: -10px;
+      background: var(--dorado); color: white; border-radius: 50%;
+      width: 80px; height: 80px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: bold; text-align: center; line-height: 1.3;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .precio-hero { font-size: 38px; font-weight: bold; color: var(--dorado); margin-bottom: 22px; }
+    .btn-hero {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
+      color: white; padding: 20px 55px; border-radius: 50px;
+      font-size: 20px; font-weight: bold; text-decoration: none;
+      box-shadow: 0 8px 25px rgba(196,149,106,0.5); transition: transform 0.2s;
+    }
+    .btn-hero:hover { transform: translateY(-3px); }
+    .pago-badge {
+      display: inline-block; margin-top: 16px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+      color: white; border-radius: 20px; padding: 8px 20px; font-size: 14px;
+    }
+
+    /* HISTORIA EMOCIONAL */
+    .historia {
+      background: var(--blanco); padding: 60px 20px;
+    }
+    .historia-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .comilla { font-size: 70px; color: var(--dorado); line-height: 0.5; display: block; margin-bottom: 20px; }
+    .historia h3 { font-size: 26px; color: var(--cafe); margin-bottom: 24px; line-height: 1.5; }
+    .historia p { font-size: 17px; color: #5C3D2E; line-height: 1.9; margin-bottom: 18px; }
+
+    /* PROBLEMAS */
+    .problema { background: linear-gradient(135deg, #F8EDE3, #F2D5E8); padding: 60px 20px; text-align: center; }
+    .problema h3 { font-size: 28px; color: var(--cafe); margin-bottom: 8px; }
+    .problema > p { font-size: 16px; color: #7A5C4F; margin-bottom: 36px; }
+    .problema-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: 860px; margin: 0 auto 36px; }
+    .problema-item {
+      background: white; border-left: 4px solid var(--rosa);
+      border-radius: 10px; padding: 16px 22px;
+      font-size: 15px; color: var(--cafe); text-align: left;
+      width: 260px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .problema-item span { font-size: 22px; margin-right: 8px; }
+    .problema-frase { font-size: 18px; color: var(--rosa); font-weight: bold; }
+
+    /* GALERÍA 8 IMÁGENES */
+    .galeria-section { background: var(--blanco); padding: 60px 20px; text-align: center; }
+    .galeria-section h3 { font-size: 28px; color: var(--cafe); margin-bottom: 8px; }
+    .galeria-section > p { font-size: 16px; color: #7A5C4F; margin-bottom: 40px; }
+    .galeria-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .galeria-card {
+      width: 240px; background: var(--crema); border-radius: 20px;
+      overflow: hidden; box-shadow: 0 6px 20px rgba(196,149,106,0.2);
+      transition: transform 0.2s; cursor: pointer;
+    }
+    .galeria-card:hover { transform: translateY(-5px); }
+    .galeria-card img { width: 100%; height: 200px; object-fit: cover; }
+    .galeria-card-texto { padding: 16px; text-align: left; }
+    .galeria-card-texto h4 { font-size: 15px; color: var(--rosa); margin-bottom: 6px; }
+    .galeria-card-texto p { font-size: 13px; color: #6B4C3B; line-height: 1.6; }
+
+    /* BENEFICIOS */
+    .beneficios { background: linear-gradient(135deg, #2C1A2E, #4A2040); padding: 60px 20px; text-align: center; color: white; }
+    .beneficios h3 { font-size: 28px; margin-bottom: 8px; }
+    .beneficios > p { opacity: 0.85; margin-bottom: 40px; font-size: 16px; }
+    .beneficios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto; }
+    .beneficio-card {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(196,149,106,0.4);
+      border-radius: 16px; padding: 28px 22px; width: 240px; border-top: 3px solid var(--dorado);
+    }
+    .beneficio-card .icono { font-size: 38px; margin-bottom: 14px; }
+    .beneficio-card h4 { font-size: 16px; color: var(--dorado); margin-bottom: 8px; }
+    .beneficio-card p { font-size: 14px; opacity: 0.85; line-height: 1.6; }
+
+    /* CÓMO USARLO */
+    .como-funciona { background: var(--crema); padding: 60px 20px; text-align: center; }
+    .como-funciona h3 { font-size: 28px; color: var(--cafe); margin-bottom: 40px; }
+    .pasos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto; }
+    .paso { width: 200px; text-align: center; }
+    .paso-numero {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--dorado), var(--dorado-oscuro));
+      color: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: bold; margin: 0 auto 14px;
+    }
+    .paso h4 { font-size: 15px; color: var(--cafe); margin-bottom: 8px; }
+    .paso p { font-size: 13px; color: #7A5C4F; line-height: 1.6; }
+
+    /* TESTIMONIOS */
+    .testimonios { background: var(--blanco); padding: 60px 20px; text-align: center; }
+    .testimonios h3 { font-size: 28px; color: var(--cafe); margin-bottom: 40px; }
+    .testimonios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 900px; margin: 0 auto; }
+    .testimonio-card {
+      background: var(--crema); border-radius: 16px; padding: 28px 24px;
+      width: 260px; text-align: left; border-bottom: 3px solid var(--dorado);
+    }
+    .estrellas { color: var(--dorado); font-size: 18px; margin-bottom: 12px; }
+    .testimonio-card p { font-size: 14px; color: var(--cafe); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+    .testimonio-nombre { font-size: 13px; color: var(--rosa); font-weight: bold; }
+
+    /* GARANTÍA */
+    .garantia {
+      background: linear-gradient(135deg, var(--rosa), #6B3055);
+      color: white; padding: 50px 20px; text-align: center;
+    }
+    .garantia h3 { font-size: 28px; margin-bottom: 14px; }
+    .garantia p { font-size: 16px; opacity: 0.9; max-width: 500px; margin: 0 auto; line-height: 1.8; }
+
+    /* BOTÓN DE PAGO / CTA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #2C1A2E, #4A2040);
+      color: white; padding: 80px 20px; text-align: center;
+    }
+    .cta-final h3 { font-size: 34px; margin-bottom: 14px; line-height: 1.3; }
+    .cta-final h3 span { color: var(--dorado); }
+    .cta-final > p { font-size: 18px; opacity: 0.85; margin-bottom: 30px; }
+    .precio-final { font-size: 52px; font-weight: bold; color: var(--dorado); margin-bottom: 6px; }
+    .precio-incluye { font-size: 15px; opacity: 0.7; margin-bottom: 30px; }
+    .metodos-pago {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 16px; margin-bottom: 36px;
+    }
+    .metodo-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(196,149,106,0.5);
+      border-radius: 12px; padding: 14px 22px;
+      font-size: 15px; color: white;
+    }
+    .metodo-item span { font-size: 22px; display: block; margin-bottom: 4px; }
+    .btn-pagar {
+      display: inline-block;
+      background: linear-gradient(135deg, #C4956A, #A07850);
+      color: white; padding: 22px 70px; border-radius: 50px;
+      font-size: 24px; font-weight: bold; text-decoration: none;
+      box-shadow: 0 10px 35px rgba(196,149,106,0.5);
+      transition: transform 0.2s; border: 3px solid rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+    }
+    .btn-pagar:hover { transform: translateY(-4px); }
+    .seguridad-texto { font-size: 14px; opacity: 0.6; margin-top: 22px; }
+
+    /* FOOTER */
+    footer { background: var(--cafe); color: #C4A882; text-align: center; padding: 28px 20px; font-size: 13px; }
+    footer a { color: var(--dorado); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hook h2 { font-size: 26px; }
+      .foto-principal { width: 220px; height: 220px; }
+      .cta-final h3 { font-size: 24px; }
+      .precio-final { font-size: 38px; }
+      .btn-pagar { padding: 18px 40px; font-size: 20px; }
+      .galeria-card { width: 100%; max-width: 340px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="barra-top">
+    🚚 Envío a toda Guatemala &nbsp;·&nbsp; 💳 Pagas cuando lo recibes en tu casa
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Sérum Despigmentante</h1>
+    <p>Tratamiento natural para manchas en la piel · Guatemala</p>
+  </header>
+
+  <!-- HOOK -->
+  <section class="hook">
+    <div class="hook-badge">✨ El secreto que miles de mujeres estaban buscando</div>
+    <h2>¿Cansada de ocultar tus <span>manchas oscuras</span> con ropa?</h2>
+    <p>Ya no tienes que esconder tus nudillos, axilas, rodillas o zonas íntimas. Nuestra fórmula concentrada actúa donde otras cremas fallaron — y los resultados se ven en solo 7 días.</p>
+    <div class="foto-principal-wrap">
+      <img id="fotoPrincipal" src="serum1.jpeg" alt="Sérum Despigmentante" class="foto-principal" />
+      <div class="foto-badge-encima">✅ 7 días<br/>resultados</div>
+    </div>
+    <br/>
+    <div class="precio-hero">Q 221.00</div>
+    <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-hero">
+      ¡Quiero Aclarar mi Piel Ahora!
+    </a>
+    <br/>
+    <div class="pago-badge">✅ Pagas en efectivo cuando lo recibes — sin riesgo</div>
+  </section>
+
+  <!-- HISTORIA EMOCIONAL -->
+  <section class="historia">
+    <div class="historia-inner">
+      <span class="comilla">"</span>
+      <h3>¿Cuántas veces has sentido vergüenza por el tono oscuro de tu piel?</h3>
+      <p>Evitar ponerte shorts porque tus rodillas se ven oscuras. Usar blusas de manga larga en pleno calor para que no se vean tus axilas. Sentirte menos segura en la intimidad por manchas que no puedes controlar.</p>
+      <p><strong style="color: var(--rosa);">No es tu culpa.</strong> La hiperpigmentación es muy común en mujeres guatemaltecas — y la mayoría de cremas del mercado simplemente no funcionan porque no están hechas para este tipo de manchas.</p>
+      <p>Por eso existe el <strong style="color: var(--rosa);">Sérum Despigmentante</strong> — una fórmula concentrada y natural que va directo a la raíz del problema, devolviendo a tu piel el tono uniforme y radiante que mereces.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section class="problema">
+    <h3>¿Te has sentido así alguna vez?</h3>
+    <p>Si te identificas con alguna de estas situaciones, este sérum es para ti</p>
+    <div class="problema-grid">
+      <div class="problema-item"><span>😔</span> Nudillos y codos mucho más oscuros que tu piel</div>
+      <div class="problema-item"><span>😔</span> Axilas oscuras que te dan pena en verano</div>
+      <div class="problema-item"><span>😔</span> Manchas en rodillas y pies que no desaparecen</div>
+      <div class="problema-item"><span>😔</span> Zonas íntimas con pigmentación oscura</div>
+      <div class="problema-item"><span>😔</span> Probaste cremas caras y no viste ningún resultado</div>
+      <div class="problema-item"><span>😔</span> Te da vergüenza usar ropa corta o traje de baño</div>
+    </div>
+    <p class="problema-frase">Esto tiene solución. Y está en tus manos hoy mismo. 👇</p>
+  </section>
+
+  <!-- GALERÍA 8 IMÁGENES CON TEXTO -->
+  <section class="galeria-section">
+    <h3>Conoce el producto por dentro y por fuera</h3>
+    <p>Toca cada imagen para verla de cerca</p>
+    <div class="galeria-grid">
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum1.jpeg'">
+        <img src="serum1.jpeg" alt="Sérum Despigmentante frasco completo" />
+        <div class="galeria-card-texto">
+          <h4>🌿 El producto completo</h4>
+          <p>Frasco de 50 ml con fórmula concentrada. Diseñado para un uso prolongado y resultados duraderos.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum2.jpg'">
+        <img src="serum2.jpg" alt="Gotero de aplicación precisa" />
+        <div class="galeria-card-texto">
+          <h4>💧 Gotero de precisión</h4>
+          <p>Aplica el sérum exactamente donde lo necesitas. Sin desperdicio, solo donde está la mancha.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum3.jpg'">
+        <img src="serum3.jpg" alt="Textura del sérum" />
+        <div class="galeria-card-texto">
+          <h4>✨ Textura ligera</h4>
+          <p>Se absorbe rápido, no deja residuo grasoso. Tu piel la acepta desde la primera aplicación.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum4.jpg'">
+        <img src="serum4.jpg" alt="Ingredientes naturales del sérum" />
+        <div class="galeria-card-texto">
+          <h4>🌱 Ingredientes naturales</h4>
+          <p>Sin químicos agresivos. Una fórmula pensada para ser suave con tu piel y potente contra las manchas.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum5.jpg'">
+        <img src="serum5.jpg" alt="Aplicación en nudillos" />
+        <div class="galeria-card-texto">
+          <h4>👐 Ideal para nudillos y codos</h4>
+          <p>Funciona perfecto en las zonas más difíciles: nudillos, codos y rodillas con manchas rebeldes.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum6.jpg'">
+        <img src="serum6.jpg" alt="Resultados en la piel" />
+        <div class="galeria-card-texto">
+          <h4>🌈 Tono uniforme visible</h4>
+          <p>Resultados reales en 7 días de uso constante. Tu piel recupera su tono natural y luminoso.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum7.jpg'">
+        <img src="serum7.jpg" alt="Uso diario del sérum" />
+        <div class="galeria-card-texto">
+          <h4>📅 Rutina diaria sencilla</h4>
+          <p>Solo unos minutos al día son suficientes. Intégralo fácil a tu rutina de cuidado personal.</p>
+        </div>
+      </div>
+
+      <div class="galeria-card" onclick="document.getElementById('fotoPrincipal').src='serum8.jpg'">
+        <img src="serum8.jpg" alt="Sérum para zonas íntimas y axilas" />
+        <div class="galeria-card-texto">
+          <h4>🔒 Discreto y efectivo</h4>
+          <p>Funciona también en axilas y zonas íntimas. Recupera tu confianza en las áreas más privadas.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="beneficios">
+    <h3>¿Por qué este sérum funciona donde otros fallan?</h3>
+    <p>Una fórmula diseñada para las manchas más difíciles de eliminar</p>
+    <div class="beneficios-grid">
+      <div class="beneficio-card">
+        <div class="icono">⚡</div>
+        <h4>Resultados en 7 días</h4>
+        <p>Acción rápida desde la primera semana. Verás la diferencia antes de terminar el frasco.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icono">🌿</div>
+        <h4>Ingredientes naturales</h4>
+        <p>Sin químicos agresivos. Suave con tu piel pero potente contra las manchas más rebeldes.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icono">💧</div>
+        <h4>Rinde bastante</h4>
+        <p>50 ml de sérum concentrado. Un frasco te dura semanas de tratamiento completo.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icono">🌈</div>
+        <h4>Para todo el cuerpo</h4>
+        <p>Nudillos, axilas, codos, rodillas, pies y zonas íntimas. Donde más lo necesitas.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icono">✨</div>
+        <h4>Piel suave y luminosa</h4>
+        <p>Además de aclarar las manchas, mejora la textura y da brillo natural a tu piel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO USARLO -->
+  <section class="como-funciona">
+    <h3>¿Cómo se usa? — Es muy fácil</h3>
+    <div class="pasos">
+      <div class="paso">
+        <div class="paso-numero">1</div>
+        <h4>Lava bien la zona</h4>
+        <p>Lava y seca perfectamente el área donde vas a aplicar el sérum.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-numero">2</div>
+        <h4>Aplica con el gotero</h4>
+        <p>Coloca unas gotas directamente sobre la mancha oscura.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-numero">3</div>
+        <h4>Masajea suavemente</h4>
+        <p>Da pequeños círculos hasta que el sérum se absorba por completo.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-numero">4</div>
+        <h4>Repite cada día</h4>
+        <p>La constancia es el secreto. En 7 días notas el cambio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <h3>Lo que dicen nuestras clientas en Guatemala</h3>
+    <div class="testimonios-grid">
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p>"Llevaba años con los nudillos oscuros y con este sérum en dos semanas ya vi la diferencia. ¡No lo puedo creer!"</p>
+        <span class="testimonio-nombre">— María G., Ciudad de Guatemala</span>
+      </div>
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p>"Por fin pude usar vestido sin sentir pena por mis axilas. Este sérum es lo mejor que he probado para las manchas."</p>
+        <span class="testimonio-nombre">— Andrea L., Quetzaltenango</span>
+      </div>
+      <div class="testimonio-card">
+        <div class="estrellas">★★★★★</div>
+        <p>"Compré dudando pero me sorprendió. Mis codos ya no se ven oscuros y mi piel está súper suave. 100% lo recomiendo."</p>
+        <span class="testimonio-nombre">— Sofía R., Escuintla</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA -->
+  <section class="garantia">
+    <h3>🛡️ Compra sin ningún riesgo</h3>
+    <p>Pagas en efectivo cuando el producto llega a tu puerta. Si tienes alguna duda sobre cómo usarlo, te acompañamos paso a paso para que obtengas los mejores resultados.</p>
+  </section>
+
+  <!-- BOTÓN DE PAGO / CTA FINAL -->
+  <section class="cta-final">
+    <h3>Es hora de que <span>tu piel brille</span> sin manchas</h3>
+    <p>Miles de mujeres en Guatemala ya están viendo resultados. Hoy es tu turno.</p>
+    <div class="precio-final">Q 221.00</div>
+    <p class="precio-incluye">Sérum Despigmentante 50ml · Entrega a domicilio en toda Guatemala</p>
+
+    <div class="metodos-pago">
+      <div class="metodo-item"><span>💵</span>Pago en efectivo</div>
+      <div class="metodo-item"><span>🚪</span>Pago al recibir</div>
+      <div class="metodo-item"><span>🚚</span>Envío a domicilio</div>
+      <div class="metodo-item"><span>📦</span>Empaque seguro</div>
+    </div>
+
+    <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-pagar">
+      💳 Pagar Ahora — Contra Entrega
+    </a>
+    <p class="seguridad-texto">📦 Envío a domicilio · Stock limitado · Entrega en 2 a 5 días hábiles</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Sérum Despigmentante · Guatemala</p>
+    <p style="margin-top: 8px;"><a href="https://almamaya.store">almamaya.store</a></p>
+  </footer>
+
+</body>
+</html>
