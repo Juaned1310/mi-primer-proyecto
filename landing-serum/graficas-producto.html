@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gráficas Producto — Sérum Despigmentante Guatemala</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: #ECECEC;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    /* ── CARD WRAPPER ── */
+    .card-wrapper { width: 820px; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .card-num { font-size: 13px; color: #888; font-weight: 700; }
+    .uso-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── CARD BASE ── */
+    .card {
+      width: 820px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+    }
+
+
+    /* ══════════════════════════════════════════
+       GRÁFICA 1 — BENEFICIOS
+       Fondo = imagen original, solo títulos naranjos
+    ══════════════════════════════════════════ */
+    .g1 {
+      position: relative;
+      min-height: 500px;
+    }
+    .g1-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .g1-text-area {
+      position: relative;
+      z-index: 2;
+      width: 52%;
+      min-height: 500px;
+      padding: 56px 0 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 36px;
+    }
+    .g1-block h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #E8701A;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1.2;
+      text-shadow: 0 1px 4px rgba(255,255,255,0.6);
+    }
+    .g1-line {
+      width: 44px;
+      height: 3px;
+      background: #E8701A;
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+
+
+    /* ══════════════════════════════════════════
+       GRÁFICA 2 — HOOK PRINCIPAL
+    ══════════════════════════════════════════ */
+    .g2 { background: #ffffff; }
+    .g2-inner {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      min-height: 520px;
+    }
+    .g2-left {
+      background: #FBF0E4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 24px;
+      gap: 18px;
+    }
+    .g2-left img.prod {
+      width: 170px;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.22));
+      border-radius: 10px;
+    }
+    .g2-mini-ba {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .g2-mini {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      height: 90px;
+    }
+    .g2-mini img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .g2-mini-tag {
+      position: absolute;
+      bottom: 5px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.72);
+      color: #fff;
+      font-size: 10px; font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .g2-mini-tag.d { background: rgba(232,112,26,0.9); }
+    .g2-right {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .g2-right .big-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #E8701A;
+      text-transform: uppercase;
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+    .g2-right .sub {
+      font-size: 16px;
+      color: #3E2A16;
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .g2-badge {
+      display: inline-block;
+      background: #E8701A;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 13px 26px;
+      border-radius: 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      align-self: flex-start;
+    }
+    .g2-store {
+      font-size: 11px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ══════════════════════════════════════
+       GRÁFICA 1 — IMAGEN DE FONDO + TÍTULOS NARANJOS
+  ══════════════════════════════════════ -->
+  <div class="card-wrapper">
+    <div class="card-meta">
+      <span class="card-num">GRÁFICA 1</span>
+      <span class="uso-tag" style="background:#1A5276;">Sección Beneficios</span>
+    </div>
+    <div class="card g1">
+
+      <!-- Imagen original como fondo completo -->
+      <img class="g1-bg" src="imagenes/ref-imagen1.webp" alt="" />
+
+      <!-- Solo los títulos naranjos encima -->
+      <div class="g1-text-area">
+
+        <div class="g1-block">
+          <h3>ACLARA CODOS<br>Y RODILLAS</h3>
+          <div class="g1-line"></div>
+        </div>
+
+        <div class="g1-block">
+          <h3>MEJORA LA PIEL<br>OSCURECIDA</h3>
+          <div class="g1-line"></div>
+        </div>
+
+        <div class="g1-block">
+          <h3>NUTRE<br>Y ACLARA</h3>
+          <div class="g1-line"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       GRÁFICA 2 — HOOK PRINCIPAL
+  ══════════════════════════════════════ -->
+  <div class="card-wrapper">
+    <div class="card-meta">
+      <span class="card-num">GRÁFICA 2</span>
+      <span class="uso-tag" style="background:#E8701A;">Hook Principal · Hero</span>
+    </div>
+    <div class="card g2">
+      <div class="g2-inner">
+        <div class="g2-left">
+          <img class="prod" src="imagenes/ref-imagen2.webp" alt="Sérum Despigmentante" />
+          <div class="g2-mini-ba">
+            <div class="g2-mini">
+              <img src="imagenes/hook-antes.jpg" alt="Antes" />
+              <span class="g2-mini-tag">Antes</span>
+            </div>
+            <div class="g2-mini">
+              <img src="imagenes/hook-despues.jpg" alt="Después" />
+              <span class="g2-mini-tag d">Después</span>
+            </div>
+          </div>
+        </div>
+        <div class="g2-right">
+          <p class="big-title">Sérum Aclarante para Nudillos y Rodillas Oscuras</p>
+          <p class="sub">Aclara la melanina y mejora las manchas oscuras de codos, rodillas y nudillos.<br><br>Resultados reales desde la primera semana de uso.</p>
+          <span class="g2-badge">Eliminá las manchas en solo 7 días</span>
+          <p class="g2-store">almamaya.store &nbsp;·&nbsp; Pagás cuando llegue a tu casa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

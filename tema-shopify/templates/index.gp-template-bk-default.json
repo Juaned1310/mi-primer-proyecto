@@ -1,0 +1,346 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "cfca4268-6358-426c-98ab-d292aeef11e5",
+    "52a5ae0a-5eee-4339-a033-e7c8d3b8ba01",
+    "comparison_table_ipDHzQ",
+    "icon_bar_WNthYJ",
+    "results_6TRFKi",
+    "contact_form_NRHwct"
+  ],
+  "sections": {
+    "52a5ae0a-5eee-4339-a033-e7c8d3b8ba01": {
+      "block_order": [
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-1",
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-2",
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-3"
+      ],
+      "blocks": {
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-1": {
+          "settings": {
+            "title": "Shrine Theme"
+          },
+          "type": "text"
+        },
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-2": {
+          "settings": {
+            "title": "Shrine Theme"
+          },
+          "type": "text"
+        },
+        "template--15035805925478__52a5ae0a-5eee-4339-a033-e7c8d3b8ba01-text-3": {
+          "settings": {
+            "title": "Shrine Theme"
+          },
+          "type": "text"
+        }
+      },
+      "settings": {
+        "bold_text": false,
+        "color_scheme": "accent-1",
+        "desktop_image_height": 40,
+        "desktop_padding_bottom": 16,
+        "desktop_padding_top": 16,
+        "desktop_spacing": 100,
+        "desktop_text_size": 18,
+        "italic_text": false,
+        "mobile_image_height": 26,
+        "mobile_padding_bottom": 12,
+        "mobile_padding_top": 12,
+        "mobile_spacing": 60,
+        "mobile_text_size": 16,
+        "speed": 3,
+        "uppercase_text": false,
+        "visibility": "always-display"
+      },
+      "type": "horizontal-ticker"
+    },
+    "cfca4268-6358-426c-98ab-d292aeef11e5": {
+      "block_order": [
+        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1",
+        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2"
+      ],
+      "blocks": {
+        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1": {
+          "settings": {
+            "atc_button_label": "",
+            "atc_product": "",
+            "box_align": "middle-center",
+            "button_label": "Button label",
+            "button_style_secondary": false,
+            "color_scheme": "background-1",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "image_overlay_opacity": 0,
+            "link": "",
+            "show_text_box": true,
+            "subheading": "Tell your brand's story through images",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "transparent_container_color": "white"
+          },
+          "type": "slide"
+        },
+        "template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2": {
+          "settings": {
+            "atc_button_label": "",
+            "atc_product": "",
+            "box_align": "middle-center",
+            "button_label": "Button label",
+            "button_style_secondary": false,
+            "color_scheme": "background-1",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "image_overlay_opacity": 0,
+            "link": "",
+            "show_text_box": true,
+            "subheading": "Tell your brand's story through images",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "transparent_container_color": "white"
+          },
+          "type": "slide"
+        }
+      },
+      "settings": {
+        "accessibility_info": "Slideshow about our brand",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "desktop_pagination_position": "over",
+        "layout": "full_bleed",
+        "mobile_pagination_position": "under",
+        "show_text_below": true,
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "visibility": "always-display"
+      },
+      "type": "slideshow"
+    },
+    "comparison_table_ipDHzQ": {
+      "block_order": [
+        "row_bytnWa",
+        "row_8zTKRJ",
+        "row_Nh7Uke"
+      ],
+      "blocks": {
+        "row_8zTKRJ": {
+          "settings": {
+            "benefit": "Benefit",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        },
+        "row_Nh7Uke": {
+          "settings": {
+            "benefit": "Benefit",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        },
+        "row_bytnWa": {
+          "settings": {
+            "benefit": "Benefit",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        }
+      },
+      "settings": {
+        "atc_button_label": "",
+        "atc_product": "",
+        "button_label": "",
+        "button_style_secondary": false,
+        "checkmark_bg_color": "#53AF01",
+        "checkmark_color": "#53AF01",
+        "checkmark_style": "regular",
+        "color_scheme": "background-1",
+        "display_id": false,
+        "heading_size": "h1",
+        "highlighted_color_scheme": "accent-1",
+        "highlighted_overlay_opacity": 0,
+        "highlighted_separator_opacity": 0,
+        "layout": "table_second",
+        "link": "",
+        "logo_width": 90,
+        "minimalistic_border_opacity": 16,
+        "mobile_logo_width": 60,
+        "opposite_icon_colors": "original",
+        "other_cells_color_scheme": "background-1",
+        "others_label": "Others",
+        "others_label_size": 18,
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "regular_overlay_opacity": 0,
+        "regular_separator_opacity": 10,
+        "style": "classic",
+        "text": "<p>Talk about how and why is your brand better than the others.</p>",
+        "title": "Comparison table",
+        "us_label": "[shop_name]",
+        "us_label_size": 18,
+        "visibility": "always-display",
+        "x_bg_color": "#DBDBDB",
+        "x_color": "#121212",
+        "x_style": "regular"
+      },
+      "type": "comparison-table"
+    },
+    "contact_form_NRHwct": {
+      "settings": {
+        "button_full_width": true,
+        "color_scheme": "background-1",
+        "display_id": false,
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "visibility": "always-display"
+      },
+      "type": "contact-form"
+    },
+    "icon_bar_WNthYJ": {
+      "block_order": [
+        "column_NmDMcL",
+        "column_g4E48Q",
+        "column_hny9HX",
+        "column_7m7Rad"
+      ],
+      "blocks": {
+        "column_7m7Rad": {
+          "settings": {
+            "filled_icon": false,
+            "icon": "check_circle",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>",
+            "title": "Icon"
+          },
+          "type": "column"
+        },
+        "column_NmDMcL": {
+          "settings": {
+            "filled_icon": false,
+            "icon": "check_circle",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>",
+            "title": "Icon"
+          },
+          "type": "column"
+        },
+        "column_g4E48Q": {
+          "settings": {
+            "filled_icon": false,
+            "icon": "check_circle",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>",
+            "title": "Icon"
+          },
+          "type": "column"
+        },
+        "column_hny9HX": {
+          "settings": {
+            "filled_icon": false,
+            "icon": "check_circle",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>",
+            "title": "Icon"
+          },
+          "type": "column"
+        }
+      },
+      "settings": {
+        "arrows_color_scheme": "inverse",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "cards_color_scheme": "background-1",
+        "color_scheme": "background-1",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "desktop_adaptive_height": false,
+        "desktop_arrows_position": "sides",
+        "desktop_dots_position": "under",
+        "desktop_full_page": false,
+        "desktop_padding_calc": true,
+        "desktop_side_padding": 0,
+        "desktop_spacing": 40,
+        "display_id": false,
+        "dots_color_scheme": "inverse",
+        "enable_mobile_preview": false,
+        "heading_size": "h1",
+        "icon_color": "accent-1",
+        "icon_layout": "vertical",
+        "icon_size": "medium",
+        "mobile_adaptive_height": false,
+        "mobile_arrows_position": "under",
+        "mobile_dots_position": "under",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "per_move_desktop": 1,
+        "slider_desktop": false,
+        "slider_mobile": true,
+        "text": "",
+        "title": "Icon bar",
+        "transparent_arrows": true,
+        "type": "slide",
+        "visibility": "always-display"
+      },
+      "type": "icon-bar"
+    },
+    "results_6TRFKi": {
+      "block_order": [
+        "row_jENLtH",
+        "row_VMyx6A",
+        "row_gricw9"
+      ],
+      "blocks": {
+        "row_VMyx6A": {
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+          },
+          "type": "row"
+        },
+        "row_gricw9": {
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+          },
+          "type": "row"
+        },
+        "row_jENLtH": {
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
+          },
+          "type": "row"
+        }
+      },
+      "settings": {
+        "atc_button_label": "",
+        "atc_product": "",
+        "button_label": "",
+        "button_style_secondary": false,
+        "caption": "<p>Caption about the results and/or link for their proof.</p>",
+        "color_scheme": "background-1",
+        "display_id": false,
+        "heading_size": "h1",
+        "layout": "results_second",
+        "link": "",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "results_headline": "Results heading",
+        "results_headline_alignment": "left",
+        "results_headline_size": "h2",
+        "text": "<p>Talk about results of your customers and how your product improved their life.</p>",
+        "title": "Results",
+        "visibility": "always-display"
+      },
+      "type": "results"
+    }
+  }
+}
