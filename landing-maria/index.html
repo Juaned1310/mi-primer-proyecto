@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sérum Despigmentante — Borra las manchas del embarazo</title>
+  <title>Sérum Despigmentante — Para mamás con manchas del embarazo</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -14,45 +14,43 @@
       overflow-x: hidden;
     }
 
-    /* ── UTILIDADES ── */
     .container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
     .text-center { text-align: center; }
 
-    /* ── BARRA SUPERIOR SCROLLING ── */
+    /* ── BARRA SUPERIOR ── */
     .topbar {
-      background: #c8a96e;
-      color: #fff;
+      background: #1a1a1a;
+      color: #f0c070;
       padding: 10px 0;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
       overflow: hidden;
       white-space: nowrap;
+      text-transform: uppercase;
     }
     .topbar-track {
       display: inline-block;
-      animation: scroll-left 22s linear infinite;
+      animation: scroll-left 24s linear infinite;
     }
     .topbar-track span {
       display: inline-block;
-      padding: 0 40px;
+      padding: 0 48px;
     }
     @keyframes scroll-left {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 1 — HOOK
-    ══════════════════════════════════ */
-    .hook {
+    /* ══ 1. HERO ══ */
+    .hero {
       position: relative;
       width: 100%;
-      min-height: 560px;
+      min-height: 620px;
       display: flex;
       align-items: flex-end;
     }
-    .hook img.hook-bg {
+    .hero img.hero-bg {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -60,42 +58,53 @@
       object-fit: cover;
       object-position: top center;
     }
-    .hook-overlay {
+    .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.93) 0%,
+        rgba(0,0,0,0.78) 28%,
+        rgba(0,0,0,0.18) 58%,
+        rgba(0,0,0,0.0) 100%);
     }
-    .hook-content {
+    .hero-content {
       position: relative;
       z-index: 2;
-      padding: 32px 24px;
+      padding: 36px 24px 48px;
       width: 100%;
       text-align: center;
     }
-    .hook-tag {
+    .hero-tag {
       display: inline-block;
       background: #c8a96e;
       color: #fff;
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 5px 14px;
+      padding: 5px 16px;
       border-radius: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .hook-titulo {
-      font-size: 26px;
+    .hero-titulo {
+      font-size: 27px;
       font-weight: 700;
       color: #fff;
       line-height: 1.25;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .hook-titulo span { color: #f0c070; }
-    .hook-subtitulo {
+    .hero-titulo span { color: #f0c070; }
+    .hero-subtitulo {
       font-size: 15px;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.5;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .hero-nota {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
       margin-bottom: 28px;
+      font-style: italic;
     }
     .btn-compra {
       display: block;
@@ -105,61 +114,115 @@
       text-decoration: none;
       font-size: 15px;
       font-weight: 700;
-      padding: 14px 20px;
-      border-radius: 8px;
-      letter-spacing: 0.5px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      letter-spacing: 0.3px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .btn-compra:hover { background: #b8944f; }
+    .btn-compra:hover { background: #b8944f; transform: translateY(-1px); }
     .btn-compra small {
       display: block;
       font-size: 11px;
       font-weight: 400;
-      margin-top: 3px;
-      opacity: 0.88;
+      margin-top: 4px;
+      opacity: 0.85;
+    }
+    .hero-garantias {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-garantias span {
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 2 — ZONA PRODUCTO
-    ══════════════════════════════════ */
-    .zona-producto {
+    /* ══ BARRA CONFIANZA ══ */
+    .trust-bar {
       background: #faf8f4;
-      padding: 40px 24px;
+      border-bottom: 1px solid #ede8de;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #555;
+      border-right: 1px solid #ede8de;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .trust-item:last-child { border-right: none; }
+
+    /* ══ 2. ZONA PRODUCTO ══ */
+    .zona-producto {
+      background: #fff;
+      padding: 44px 24px 36px;
       text-align: center;
+      border-bottom: 1px solid #f0ebe0;
     }
     .producto-img-wrap {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 24px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 3px solid #e8d9c0;
+      border: 2px solid #e8d9c0;
+      box-shadow: 0 8px 32px rgba(200,169,110,0.2);
     }
-    .producto-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .producto-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .producto-nombre {
       font-size: 22px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 6px;
-    }
-    .producto-subtitulo {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .estrellas {
-      color: #f5a623;
-      font-size: 20px;
       margin-bottom: 4px;
     }
-    .reseñas-texto {
+    .producto-subtitulo {
       font-size: 13px;
-      color: #666;
+      color: #999;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .estrellas { color: #f5a623; font-size: 20px; margin-bottom: 4px; }
+    .resenas-texto {
+      font-size: 13px;
+      color: #888;
       margin-bottom: 16px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .precio-bloque {
+      margin-bottom: 8px;
+    }
+    .precio-antes {
+      font-size: 14px;
+      color: #bbb;
+      text-decoration: line-through;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .precio-actual {
+      font-size: 42px;
+      font-weight: 900;
+      color: #c8a96e;
+      line-height: 1.1;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .precio-nota {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .envio-badge {
       display: inline-block;
@@ -169,78 +232,133 @@
       padding: 6px 16px;
       border-radius: 20px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 20px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .producto-bullets {
       list-style: none;
       text-align: left;
-      max-width: 280px;
+      max-width: 300px;
       margin: 0 auto 24px;
     }
     .producto-bullets li {
       font-size: 14px;
       color: #444;
-      padding: 6px 0;
-      padding-left: 24px;
+      padding: 8px 0;
+      padding-left: 26px;
       position: relative;
+      border-bottom: 1px solid #f5f0e8;
+      font-family: 'Segoe UI', sans-serif;
     }
     .producto-bullets li::before {
       content: "✓";
       position: absolute;
       left: 0;
       color: #c8a96e;
-      font-weight: 700;
+      font-weight: 900;
+      font-size: 15px;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 3 — WHATSAPP / CHATS
-    ══════════════════════════════════ */
+    /* ══ 3. ESPEJO ══ */
+    .seccion-espejo {
+      background: #1a1a1a;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .espejo-titulo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .espejo-titulo span { color: #f0c070; }
+    .espejo-items {
+      list-style: none;
+      text-align: left;
+      max-width: 340px;
+      margin: 0 auto 32px;
+    }
+    .espejo-items li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      padding: 11px 0;
+      padding-left: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      line-height: 1.4;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .espejo-items li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #f0c070;
+      font-weight: 700;
+    }
+    .espejo-cierre {
+      font-size: 17px;
+      color: #f0c070;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* ══ 4. CHATS ══ */
     .seccion-chats {
       background: #fff;
-      padding: 40px 24px;
+      padding: 44px 24px;
     }
     .seccion-titulo {
       font-size: 18px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 6px;
       color: #1a1a1a;
+    }
+    .seccion-subtitulo {
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+      margin-bottom: 24px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .chat-burbuja {
       background: #e7fce8;
       border-radius: 16px 16px 16px 4px;
       padding: 14px 16px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       border: 1px solid #d0ebd0;
     }
     .chat-nombre {
       font-size: 12px;
       font-weight: 700;
       color: #2e7d32;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .chat-texto {
       font-size: 14px;
       color: #1a1a1a;
-      line-height: 1.5;
+      line-height: 1.55;
+      font-family: 'Segoe UI', sans-serif;
     }
     .chat-hora {
       font-size: 11px;
       color: #999;
       text-align: right;
-      margin-top: 4px;
+      margin-top: 5px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .chat-verificado {
       font-size: 11px;
       color: #666;
       text-align: center;
       margin-top: 16px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 4 — PROBLEMA
-    ══════════════════════════════════ */
+    /* ══ 5. PROBLEMA (imagen) ══ */
     .seccion-problema {
       position: relative;
       min-height: 500px;
@@ -258,17 +376,20 @@
     .problema-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(10,5,0,0.9) 0%, rgba(10,5,0,0.3) 60%, transparent 100%);
+      background: linear-gradient(to top,
+        rgba(10,5,0,0.93) 0%,
+        rgba(10,5,0,0.45) 55%,
+        transparent 100%);
     }
     .problema-content {
       position: relative;
       z-index: 2;
-      padding: 32px 24px;
+      padding: 36px 24px;
       width: 100%;
     }
     .problema-tag {
       display: inline-block;
-      background: rgba(200,169,110,0.25);
+      background: rgba(200,169,110,0.2);
       border: 1px solid #c8a96e;
       color: #f0c070;
       font-size: 11px;
@@ -277,9 +398,10 @@
       padding: 4px 12px;
       border-radius: 20px;
       margin-bottom: 14px;
+      font-family: 'Segoe UI', sans-serif;
     }
     .problema-titulo {
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 700;
       color: #fff;
       line-height: 1.3;
@@ -290,12 +412,56 @@
       font-size: 15px;
       color: rgba(255,255,255,0.85);
       line-height: 1.7;
-      margin-bottom: 8px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 5 — SOLUCIÓN
-    ══════════════════════════════════ */
+    /* ══ 6. POR QUÉ NADA FUNCIONÓ ══ */
+    .seccion-porque {
+      background: #faf8f4;
+      padding: 48px 24px;
+    }
+    .porque-titulo {
+      font-size: 21px;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .porque-titulo span { color: #c8a96e; }
+    .porque-sub {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .porque-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+    .porque-icono {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .porque-texto strong {
+      display: block;
+      font-size: 14px;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+    .porque-texto p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* ══ 7. SOLUCIÓN (imagen) ══ */
     .seccion-solucion {
       position: relative;
       min-height: 440px;
@@ -313,12 +479,15 @@
     .solucion-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(214,48,104,0.82) 0%, rgba(0,0,0,0.05) 60%, transparent 100%);
+      background: linear-gradient(to top,
+        rgba(10,5,0,0.90) 0%,
+        rgba(10,5,0,0.35) 55%,
+        rgba(10,5,0,0.05) 100%);
     }
     .solucion-content {
       position: relative;
       z-index: 2;
-      padding: 32px 24px;
+      padding: 36px 24px;
       width: 100%;
       text-align: center;
     }
@@ -329,63 +498,65 @@
       line-height: 1.3;
       margin-bottom: 12px;
     }
+    .solucion-titulo span { color: #f0c070; }
     .solucion-texto {
       font-size: 15px;
-      color: rgba(255,255,255,0.92);
-      line-height: 1.65;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.7;
       margin-bottom: 6px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 6 — PRODUCTO DETALLE
-    ══════════════════════════════════ */
-    .seccion-producto-detalle {
+    /* ══ 8. PRODUCTO DETALLE ══ */
+    .seccion-detalle {
       background: #fff;
-      padding: 44px 24px;
+      padding: 48px 24px;
     }
-    .producto-detalle-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .producto-detalle-img {
-      width: 160px;
-      height: 160px;
+    .detalle-img {
+      width: 100%;
+      max-width: 340px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 12px;
-      margin: 0 auto 16px;
+      object-position: center;
+      border-radius: 16px;
+      margin: 0 auto 22px;
       display: block;
       border: 2px solid #e8d9c0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
     }
-    .h2-seccion {
+    .h2-sec {
       font-size: 20px;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 8px;
+      text-align: center;
     }
-    .h3-seccion {
-      font-size: 16px;
+    .h3-sec {
+      font-size: 15px;
       font-weight: 700;
       color: #c8a96e;
       margin: 24px 0 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .p-detalle {
+    .p-det {
       font-size: 14px;
       color: #444;
       line-height: 1.7;
       margin-bottom: 10px;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
     }
-    .ingrediente-lista {
-      list-style: none;
-    }
+    .ingrediente-lista { list-style: none; }
     .ingrediente-lista li {
       font-size: 14px;
       color: #444;
-      padding: 8px 0;
+      padding: 9px 0 9px 24px;
       border-bottom: 1px solid #f0ebe0;
-      padding-left: 22px;
       position: relative;
+      line-height: 1.5;
+      font-family: 'Segoe UI', sans-serif;
     }
     .ingrediente-lista li::before {
       content: "🌿";
@@ -393,26 +564,24 @@
       left: 0;
       font-size: 12px;
     }
-    .modo-uso-pasos {
-      counter-reset: paso;
-      list-style: none;
-    }
-    .modo-uso-pasos li {
+    .modo-uso { counter-reset: paso; list-style: none; }
+    .modo-uso li {
       counter-increment: paso;
       font-size: 14px;
       color: #444;
-      padding: 10px 0 10px 36px;
+      padding: 10px 0 10px 38px;
       border-bottom: 1px solid #f0ebe0;
       position: relative;
-      line-height: 1.5;
+      line-height: 1.55;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .modo-uso-pasos li::before {
+    .modo-uso li::before {
       content: counter(paso);
       position: absolute;
       left: 0;
       top: 10px;
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       background: #c8a96e;
       color: #fff;
       border-radius: 50%;
@@ -421,108 +590,68 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .invima-badge {
-      background: #f0f8ff;
-      border: 1px solid #b3d4f0;
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin-top: 20px;
-      font-size: 13px;
-      color: #1a5276;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 7 — TABLA COMPARATIVA
-    ══════════════════════════════════ */
-    .seccion-comparativa {
-      background: #faf8f4;
-      padding: 44px 24px;
-    }
-    .tabla-comp {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 13px;
-    }
-    .tabla-comp th {
-      padding: 12px 8px;
-      text-align: center;
-      font-size: 12px;
-    }
-    .tabla-comp th.col-nosotros {
-      background: #c8a96e;
-      color: #fff;
-      border-radius: 8px 8px 0 0;
-    }
-    .tabla-comp th.col-otros { color: #999; }
-    .tabla-comp td {
-      padding: 12px 8px;
-      text-align: center;
-      border-bottom: 1px solid #ede8de;
-      color: #444;
-    }
-    .tabla-comp td.col-nosotros {
-      background: rgba(200,169,110,0.08);
-      font-weight: 600;
-      color: #1a1a1a;
-    }
-    .tabla-comp td.feature { text-align: left; color: #666; font-size: 12px; }
-    .check-verde { color: #2e7d32; font-size: 16px; }
-    .check-rojo { color: #c0392b; font-size: 16px; }
-
-    /* ══════════════════════════════════
-       SECCIÓN 8 — ANTES VS DESPUÉS
-    ══════════════════════════════════ */
-    .seccion-antesdespues {
+    /* ══ 9. ANTES / DESPUÉS ══ */
+    .seccion-ad {
       background: #1a1a1a;
-      padding: 44px 24px;
+      padding: 48px 24px;
       text-align: center;
     }
-    .seccion-antesdespues .h2-seccion { color: #fff; margin-bottom: 6px; }
-    .antesdespues-subtitulo { color: #999; font-size: 14px; margin-bottom: 24px; }
-    .antesdespues-img {
+    .seccion-ad .h2-sec { color: #fff; margin-bottom: 6px; }
+    .ad-sub { color: #888; font-size: 14px; margin-bottom: 28px; font-family: 'Segoe UI', sans-serif; }
+    .ad-imagen {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 16px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      display: block;
     }
-    .antesdespues-labels {
+    .ad-labels {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
-      margin-top: -8px;
+      font-size: 13px;
+      font-weight: 700;
       margin-bottom: 20px;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .label-antes { color: #e74c3c; font-weight: 700; }
-    .label-despues { color: #2ecc71; font-weight: 700; }
-    .resultado-texto {
-      color: rgba(255,255,255,0.75);
+    .label-antes { color: #e74c3c; }
+    .label-despues { color: #2ecc71; }
+    .ad-texto {
+      color: rgba(255,255,255,0.7);
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.65;
+      font-family: 'Segoe UI', sans-serif;
+      margin-bottom: 28px;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN 9 — TESTIMONIOS
-    ══════════════════════════════════ */
-    .seccion-testimonios {
+    /* ══ 10. TESTIMONIOS ══ */
+    .seccion-testi {
       background: #fff;
-      padding: 44px 24px;
+      padding: 48px 24px;
     }
-    .testimonio-card {
+    .testi-foto {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .testi-card {
       background: #faf8f4;
       border-radius: 12px;
       padding: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-left: 3px solid #c8a96e;
     }
-    .testimonio-header {
+    .testi-header {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
       gap: 10px;
+      margin-bottom: 10px;
     }
-    .testimonio-avatar {
+    .testi-avatar {
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -533,36 +662,22 @@
       font-size: 18px;
       flex-shrink: 0;
     }
-    .testimonio-nombre { font-size: 14px; font-weight: 700; color: #1a1a1a; }
-    .testimonio-lugar { font-size: 12px; color: #999; }
-    .testimonio-estrellas { color: #f5a623; font-size: 14px; margin-bottom: 6px; }
-    .testimonio-texto { font-size: 14px; color: #444; line-height: 1.6; }
-    .testimonio-img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      object-fit: cover;
-      height: 200px;
-    }
+    .testi-nombre { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+    .testi-lugar { font-size: 12px; color: #999; font-family: 'Segoe UI', sans-serif; }
+    .testi-estrellas { color: #f5a623; font-size: 14px; margin-bottom: 7px; }
+    .testi-texto { font-size: 14px; color: #444; line-height: 1.65; font-family: 'Segoe UI', sans-serif; }
 
-    /* ══════════════════════════════════
-       SECCIÓN 10 — FAQ
-    ══════════════════════════════════ */
-    .seccion-faq {
-      background: #faf8f4;
-      padding: 44px 24px;
-    }
-    .faq-item {
-      border-bottom: 1px solid #e8d9c0;
-      padding: 18px 0;
-    }
+    /* ══ 11. FAQ ══ */
+    .seccion-faq { background: #faf8f4; padding: 48px 24px; }
+    .faq-item { border-bottom: 1px solid #e8d9c0; padding: 18px 0; }
     .faq-pregunta {
       font-size: 15px;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 8px;
-      padding-left: 20px;
+      padding-left: 22px;
       position: relative;
+      line-height: 1.4;
     }
     .faq-pregunta::before {
       content: "?";
@@ -574,20 +689,19 @@
     .faq-respuesta {
       font-size: 14px;
       color: #555;
-      line-height: 1.65;
-      padding-left: 20px;
+      line-height: 1.7;
+      padding-left: 22px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       SECCIÓN FINAL — CTA CIERRE
-    ══════════════════════════════════ */
-    .seccion-cta-final {
+    /* ══ 12. CTA FINAL ══ */
+    .seccion-cta {
       position: relative;
-      min-height: 460px;
+      min-height: 480px;
       display: flex;
       align-items: flex-end;
     }
-    .seccion-cta-final img.bg {
+    .seccion-cta img.bg {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -595,56 +709,93 @@
       object-fit: cover;
       object-position: top center;
     }
-    .cta-final-overlay {
+    .cta-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.6) 50%,
+        rgba(0,0,0,0.2) 100%);
     }
-    .cta-final-content {
+    .cta-content {
       position: relative;
       z-index: 2;
-      padding: 32px 24px;
+      padding: 36px 24px 48px;
       width: 100%;
       text-align: center;
     }
-    .cta-final-titulo {
-      font-size: 24px;
+    .cta-titulo {
+      font-size: 25px;
       font-weight: 700;
       color: #fff;
       margin-bottom: 10px;
       line-height: 1.3;
     }
-    .cta-final-titulo span { color: #f0c070; }
-    .cta-final-texto {
+    .cta-titulo span { color: #f0c070; }
+    .cta-texto {
       font-size: 14px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+      line-height: 1.65;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .cta-precio-antes {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: line-through;
+      font-family: 'Segoe UI', sans-serif;
+      margin-bottom: 2px;
+    }
+    .cta-precio {
+      font-size: 52px;
+      font-weight: 900;
+      color: #f0c070;
+      line-height: 1;
+      margin-bottom: 4px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .cta-precio-nota {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
       margin-bottom: 24px;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
     }
     .garantia-badge {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
       padding: 12px 16px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       font-size: 13px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.8);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .cta-garantias {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .cta-garantias span {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* ══════════════════════════════════
-       FOOTER
-    ══════════════════════════════════ */
+    /* FOOTER */
     footer {
       background: #0f0f0f;
-      color: #666;
+      color: #555;
       text-align: center;
       padding: 24px 20px;
       font-size: 12px;
       line-height: 1.8;
+      font-family: 'Segoe UI', sans-serif;
     }
-    footer a { color: #888; text-decoration: none; }
+    footer a { color: #777; text-decoration: none; }
 
-    /* ── BOTÓN FLOTANTE ── */
+    /* BOTÓN FLOTANTE */
     .btn-flotante {
       position: fixed;
       bottom: 20px;
@@ -652,393 +803,579 @@
       transform: translateX(-50%);
       background: #c8a96e;
       color: #fff;
-      padding: 16px 28px;
+      padding: 15px 28px;
       border-radius: 50px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(200,169,110,0.5);
+      box-shadow: 0 4px 24px rgba(200,169,110,0.55);
       z-index: 999;
       white-space: nowrap;
       animation: pulse 2.5s infinite;
+      font-family: 'Segoe UI', sans-serif;
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(200,169,110,0.5); }
-      50% { box-shadow: 0 4px 32px rgba(200,169,110,0.85); }
+      0%, 100% { box-shadow: 0 4px 24px rgba(200,169,110,0.55); }
+      50%       { box-shadow: 0 4px 36px rgba(200,169,110,0.9); }
     }
 
-    /* ── SEPARADOR ── */
     .separador { height: 1px; background: #ede8de; margin: 0 24px; }
+    .btn-bloque {
+      padding: 28px 24px;
+      background: #fff;
+      text-align: center;
+    }
+    .btn-bloque.crema { background: #faf8f4; }
+
+    /* ══ WIDGET PEDIDO ══ */
+    .urgencia-bar {
+      background: #c0392b;
+      padding: 11px 16px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .urgencia-texto {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 0.3px;
+    }
+    .urgencia-contador {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 900;
+      font-family: 'Segoe UI', sans-serif;
+      background: rgba(0,0,0,0.25);
+      padding: 2px 10px;
+      border-radius: 6px;
+      letter-spacing: 2px;
+    }
+    .pedido-inner {
+      background: #111;
+      padding: 28px 20px 32px;
+    }
+    .pedido-titulo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .pedido-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .paquetes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .paquete {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 15px 15px 15px 46px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .paquete.activo {
+      background: rgba(200,169,110,0.13);
+      border-color: #c8a96e;
+    }
+    .paquete.popular { padding-top: 28px; }
+    .pkg-badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c8a96e;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      padding: 3px 14px;
+      border-radius: 0 0 8px 8px;
+      font-family: 'Segoe UI', sans-serif;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .pkg-radio {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.25);
+      background: transparent;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .pkg-radio.on {
+      border-color: #c8a96e;
+      background: #c8a96e;
+      box-shadow: inset 0 0 0 4px #111;
+    }
+    .pkg-info { flex: 1; }
+    .pkg-nombre {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .pkg-detalle {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .pkg-precio {
+      font-size: 22px;
+      font-weight: 900;
+      color: #f0c070;
+      font-family: 'Segoe UI', sans-serif;
+      flex-shrink: 0;
+    }
+    .btn-pedido {
+      display: block;
+      width: 100%;
+      background: #c8a96e;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+      padding: 17px 20px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.2s, transform 0.15s;
+      animation: pulso-btn 2.2s infinite;
+    }
+    @keyframes pulso-btn {
+      0%,100% { box-shadow: 0 4px 18px rgba(200,169,110,0.4); }
+      50%      { box-shadow: 0 4px 30px rgba(200,169,110,0.85); }
+    }
+    .btn-pedido:hover { background: #b8944f; transform: translateY(-1px); }
+    .btn-pedido small {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      margin-top: 4px;
+      text-transform: none;
+      opacity: 0.85;
+      letter-spacing: 0;
+    }
+    .pedido-trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .pedido-trust span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .escasez {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .escasez strong { color: #ff6b6b; }
+
   </style>
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR SCROLLING -->
-  <div class="topbar">
-    <div class="topbar-track">
-      <span>✨ Pago al recibir &nbsp;·&nbsp; Sin tarjeta &nbsp;·&nbsp; Resultados desde la semana 3 &nbsp;·&nbsp; +847 mamás guatemaltecas &nbsp;·&nbsp; Envío a todo Guatemala &nbsp;·&nbsp; 100% natural</span>
-      <span>✨ Pago al recibir &nbsp;·&nbsp; Sin tarjeta &nbsp;·&nbsp; Resultados desde la semana 3 &nbsp;·&nbsp; +847 mamás guatemaltecas &nbsp;·&nbsp; Envío a todo Guatemala &nbsp;·&nbsp; 100% natural</span>
+<!-- BARRA SCROLLING -->
+<div class="topbar">
+  <div class="topbar-track">
+    <span>✦ Las manchas del embarazo SÍ se quitan &nbsp;·&nbsp; Pago en efectivo cuando llega &nbsp;·&nbsp; Envío gratis a toda Guatemala &nbsp;·&nbsp; +1,200 mamás guatemaltecas ya lo usan &nbsp;·&nbsp; Sin tarjeta · Sin riesgo</span>
+    <span>✦ Las manchas del embarazo SÍ se quitan &nbsp;·&nbsp; Pago en efectivo cuando llega &nbsp;·&nbsp; Envío gratis a toda Guatemala &nbsp;·&nbsp; +1,200 mamás guatemaltecas ya lo usan &nbsp;·&nbsp; Sin tarjeta · Sin riesgo</span>
+  </div>
+</div>
+
+<!-- ══ 1. HERO ══ -->
+<section class="hero">
+  <img class="hero-bg" src="../generador-imagenes/imagenes-landing-maria/hook-dolor.jpg" alt="" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-titulo">
+      ¿Las manchas del embarazo<br/>
+      <span>todavía no se te han ido?</span>
+    </h1>
+    <p class="hero-subtitulo">
+      Cada mañana te las encontrás en el espejo.<br/>
+      Ya sabés que no se van solas.
+    </p>
+    <p class="hero-nota">+1,200 mamás guatemaltecas ya las están borrando</p>
+    <a href="pedido.html" class="btn-compra" style="font-size:13px; padding:12px 20px;">
+      Quiero saber cómo quitármelas
+      <small>Solo Q200 · Pagás cuando llega a tu puerta</small>
+    </a>
+    <div class="hero-garantias">
+      <span>✓ Sin tarjeta</span>
+      <span>✓ Envío gratis</span>
+      <span>✓ Pago al recibir</span>
     </div>
   </div>
+</section>
 
-  <!-- ══════════════════════════════════
-       SECCIÓN 1 — HOOK
-  ══════════════════════════════════ -->
-  <section class="hook">
-    <img class="hook-bg" src="../generador-imagenes/imagenes-landing-maria/hook-dolor.jpg" alt="Mujer con manchas del embarazo" />
-    <div class="hook-overlay"></div>
-    <div class="hook-content">
-      <h1 class="hook-titulo">
-        ¿Cuánto tiempo llevas<br/>
-        <span>escondiéndote detrás<br/>del maquillaje?</span>
-      </h1>
-      <p class="hook-subtitulo">
-        Las manchas del embarazo sí se van.<br/>
-        Miles de mamás guatemaltecas ya lo comprobaron.
-      </p>
-      <a href="#comprar" class="btn-compra">
-        Quiero borrar mis manchas
-        <small>Pago al recibir · Sin tarjeta</small>
-      </a>
-    </div>
-  </section>
+<!-- BARRA CONFIANZA -->
+<div class="trust-bar">
+  <div class="trust-item">📦 Envío Gratis</div>
+  <div class="trust-item">💵 Pago al Recibir</div>
+  <div class="trust-item">⚡ 2–4 Días</div>
+  <div class="trust-item">🛡️ Garantía 30 días</div>
+</div>
 
-  <!-- ══════════════════════════════════
-       SECCIÓN 2 — ZONA PRODUCTO
-  ══════════════════════════════════ -->
-  <section class="zona-producto">
-    <div class="producto-img-wrap">
-      <img src="../generador-imagenes/imagenes-landing-maria/producto-final.jpg" alt="Sérum Despigmentante" />
-    </div>
-    <p class="producto-subtitulo">Fórmula en gotas</p>
-    <h2 class="producto-nombre">Sérum Despigmentante</h2>
-    <div class="estrellas">★★★★★</div>
-    <p class="reseñas-texto">+847 mamás guatemaltecas ya lo usan</p>
-    <span class="envio-badge">📦 Envío gratis a todo Guatemala</span>
-    <ul class="producto-bullets">
-      <li>Actúa desde adentro de la mancha</li>
-      <li>Visible desde las primeras 3 semanas</li>
-      <li>Sin químicos agresivos para piel morena</li>
-      <li>Pago en efectivo cuando llega a tu puerta</li>
-    </ul>
-    <a href="#comprar" class="btn-compra">Quiero el mío ahora</a>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 3 — CHATS WHATSAPP
-  ══════════════════════════════════ -->
-  <section class="seccion-chats">
-    <h2 class="seccion-titulo">Lo que nos escriben las mamás 💬</h2>
-
-    <div class="chat-burbuja">
-      <div class="chat-nombre">María F. — Mixco</div>
-      <div class="chat-texto">
-        "Fíjese que en 4 semanas mis manchas del embarazo ya están más claras. Yo no creía pero sí funcionó. Voy a pedir otro frasco 🙏"
-      </div>
-      <div class="chat-hora">✓✓ Leído</div>
-    </div>
-
-    <div class="chat-burbuja">
-      <div class="chat-nombre">Carmen A. — Villa Nueva</div>
-      <div class="chat-texto">
-        "Lo bueno es que pagué cuando llegó. Eso me dio confianza. Y mis manchas del embarazo ya se notan menos. Gracias!"
-      </div>
-      <div class="chat-hora">✓✓ Leído</div>
-    </div>
-
-    <div class="chat-burbuja">
-      <div class="chat-nombre">Lupita G. — Escuintla</div>
-      <div class="chat-texto">
-        "Mis cuñadas me preguntaron qué me hice en la cara 😍 les dije de las gotitas. Ya me pidieron que les encargara uno para ellas también"
-      </div>
-      <div class="chat-hora">✓✓ Leído</div>
-    </div>
-
-    <p class="chat-verificado">✅ Mensajes reales de clientas verificadas</p>
-  </section>
-
-  <div class="separador"></div>
-
-  <!-- BOTÓN COMPRA #1 -->
-  <section style="padding: 28px 24px; background: #fff; text-align: center;">
-    <a href="#comprar" class="btn-compra">
-      Pedir el mío — Pago al recibir
-      <small>Quedan pocas unidades disponibles hoy</small>
-    </a>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 4 — PROBLEMA
-  ══════════════════════════════════ -->
-  <section class="seccion-problema">
-    <img class="bg" src="../generador-imagenes/imagenes-landing-maria/seccion-problema.jpg" alt="Mujer con manchas mirando espejo" />
-    <div class="problema-overlay"></div>
-    <div class="problema-content">
-      <h2 class="problema-titulo">
-        Te mirás al espejo y las manchas<br/>
-        <span>siguen ahí</span>
-      </h2>
-      <p class="problema-texto">
-        Probaste cremas, limón, remedios caseros. Nada funcionó. Y el dermatólogo cobra Q800+ por sesión.
-      </p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 5 — SOLUCIÓN
-  ══════════════════════════════════ -->
-  <section class="seccion-solucion">
-    <img class="bg" src="../generador-imagenes/imagenes-landing-maria/producto-sobre-fondo.jpg" alt="Sérum Despigmentante" />
-    <div class="solucion-overlay"></div>
-    <div class="solucion-content">
-      <h2 class="solucion-titulo">
-        Sí tiene solución.<br/>Sin dermatólogo.
-      </h2>
-      <p class="solucion-texto">
-        El Sérum actúa donde se forma la mancha — desde adentro, semana a semana.
-      </p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 6 — PRODUCTO DETALLE
-  ══════════════════════════════════ -->
-  <section class="seccion-producto-detalle">
-    <div class="producto-detalle-header">
-      <img class="producto-detalle-img" src="../generador-imagenes/imagenes-landing-maria/ingredientes-naturales.jpg" alt="Ingredientes naturales" />
-      <h2 class="h2-seccion">Sérum Despigmentante</h2>
-      <p class="p-detalle">Fórmula en gotas de alta concentración. Desarrollada para piel morena guatemalteca — sin químicos agresivos que irriten.</p>
-    </div>
-
-    <h3 class="h3-seccion">Ingredientes activos</h3>
-    <ul class="ingrediente-lista">
-      <li><strong>Vitamina C estabilizada</strong> — inhibe la producción de melanina (pigmento que causa las manchas)</li>
-      <li><strong>Niacinamida</strong> — aclara y unifica el tono de forma progresiva</li>
-      <li><strong>Ácido kójico natural</strong> — actúa directo en manchas de melasma y post-acné</li>
-      <li><strong>Aloe vera puro</strong> — calma e hidrata sin irritar piel sensible</li>
-      <li><strong>Extracto de regaliz</strong> — refuerza el efecto despigmentante de forma natural</li>
-    </ul>
-
-    <h3 class="h3-seccion">Modo de uso</h3>
-    <ol class="modo-uso-pasos">
-      <li>Lavate la cara con tu jabón de siempre y secate bien</li>
-      <li>Aplica 4-5 gotitas del sérum en las zonas con manchas</li>
-      <li>Masajea suavemente con la yema de los dedos por 1 minuto</li>
-      <li>Dejalo absorber 5 minutos antes de aplicar hidratante</li>
-      <li>Úsalo cada noche antes de dormir para mejores resultados</li>
-    </ol>
-
-    <div class="invima-badge">
-      🏛️ Producto registrado y autorizado · Fórmula dermatológicamente probada · Apto para piel sensible y morena
-    </div>
-  </section>
-
-  <!-- BOTÓN COMPRA #2 -->
-  <section style="padding: 28px 24px; background: #faf8f4; text-align: center;">
-    <a href="#comprar" class="btn-compra">
-      Lo quiero — Pagar al recibirlo
-      <small>Envío con Guatex · Ciudad y departamentos</small>
-    </a>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 7 — TABLA COMPARATIVA
-  ══════════════════════════════════ -->
-  <section class="seccion-comparativa">
-    <h2 class="h2-seccion text-center">¿Por qué nosotros y no otra crema?</h2>
-    <table class="tabla-comp">
-      <thead>
-        <tr>
-          <th style="text-align:left; color:#999; font-size:12px;">Característica</th>
-          <th class="col-nosotros">Sérum<br/>Despigmentante</th>
-          <th class="col-otros">Cremas<br/>farmacia</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="feature">Actúa en capas profundas</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-        <tr>
-          <td class="feature">Para melasma del embarazo</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-        <tr>
-          <td class="feature">Sin irritación piel morena</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-        <tr>
-          <td class="feature">Pago al recibir (sin tarjeta)</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-        <tr>
-          <td class="feature">Resultados desde semana 3</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-        <tr>
-          <td class="feature">Envío gratis a Guatemala</td>
-          <td class="col-nosotros check-verde">✓</td>
-          <td class="check-rojo">✗</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 8 — ANTES VS DESPUÉS
-  ══════════════════════════════════ -->
-  <section class="seccion-antesdespues">
-    <h2 class="h2-seccion">Resultados reales</h2>
-    <p class="antesdespues-subtitulo">Sin filtros · Sin edición · Solo el sérum</p>
-    <img class="antesdespues-img" src="../generador-imagenes/imagenes-landing-maria/hook-antes-despues.jpg" alt="Antes y después del sérum" />
-    <div class="antesdespues-labels">
-      <span class="label-antes">← ANTES</span>
-      <span class="label-despues">DESPUÉS →</span>
-    </div>
-    <p class="resultado-texto">
-      Resultado promedio en 6-8 semanas de uso constante cada noche. Manchas de melasma post-embarazo.
-    </p>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 9 — TESTIMONIOS
-  ══════════════════════════════════ -->
-  <section class="seccion-testimonios">
-    <h2 class="seccion-titulo" style="margin-bottom: 20px;">Mamás que ya borraron sus manchas</h2>
-
-    <img class="testimonio-img" src="../generador-imagenes/imagenes-landing-maria/testimonios-guatemaltecas.jpg" alt="Mujeres guatemaltecas" />
-
-    <div class="testimonio-card">
-      <div class="testimonio-header">
-        <div class="testimonio-avatar">👩🏽</div>
-        <div>
-          <div class="testimonio-nombre">María Fernanda A.</div>
-          <div class="testimonio-lugar">Mixco, Guatemala</div>
-        </div>
-      </div>
-      <div class="testimonio-estrellas">★★★★★</div>
-      <p class="testimonio-texto">"Tenía manchas del embarazo desde hace 2 años y ya me había resignado. En 6 semanas ya se notó el cambio. Lloré de emoción cuando vi el resultado."</p>
-    </div>
-
-    <div class="testimonio-card">
-      <div class="testimonio-header">
-        <div class="testimonio-avatar">👩🏾</div>
-        <div>
-          <div class="testimonio-nombre">Carmen R.</div>
-          <div class="testimonio-lugar">Villa Nueva, Guatemala</div>
-        </div>
-      </div>
-      <div class="testimonio-estrellas">★★★★★</div>
-      <p class="testimonio-texto">"Al principio no creía porque he comprado de todo y nada funcionó. Pero como se paga al recibirlo dije voy a intentarlo. Gracias a Dios sí funcionó."</p>
-    </div>
-
-    <div class="testimonio-card">
-      <div class="testimonio-header">
-        <div class="testimonio-avatar">🧑🏽‍🦱</div>
-        <div>
-          <div class="testimonio-nombre">Lupita G.</div>
-          <div class="testimonio-lugar">Escuintla, Guatemala</div>
-        </div>
-      </div>
-      <div class="testimonio-estrellas">★★★★★</div>
-      <p class="testimonio-texto">"Mis cuñadas me preguntaron qué me hice en la cara. Les dije que este sérum. Ya lo pidieron ellas también. Voy por mi segundo frasco."</p>
-    </div>
-  </section>
-
-  <!-- BOTÓN COMPRA #3 -->
-  <section style="padding: 28px 24px; background: #fff; text-align: center;">
-    <a href="#comprar" class="btn-compra">
-      Pedir el mío ahora
-      <small>📦 Llega en 2-4 días · Pagás al recibirlo</small>
-    </a>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN 10 — FAQ
-  ══════════════════════════════════ -->
-  <section class="seccion-faq">
-    <h2 class="h2-seccion text-center" style="margin-bottom: 8px;">Preguntas frecuentes</h2>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Funciona para manchas del embarazo (melasma)?</div>
-      <p class="faq-respuesta">Sí, está formulado especialmente para melasma hormonal. Los ingredientes activos actúan en las capas donde se forma el melasma, aclarando desde adentro.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿En cuánto tiempo veo resultados?</div>
-      <p class="faq-respuesta">La mayoría de clientas notan cambio visible entre la semana 3 y 5 de uso constante. Para manchas más profundas puede tomar 6-8 semanas.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Puedo pagar sin tarjeta?</div>
-      <p class="faq-respuesta">Sí. Pagás en efectivo cuando el mensajero de Guatex llega a tu puerta. No necesitás cuenta bancaria ni tarjeta de crédito.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Llega a mi municipio?</div>
-      <p class="faq-respuesta">Enviamos a toda Guatemala — capital, Mixco, Villa Nueva, Escuintla, Xela, Cobán, Petén y todos los departamentos con Guatex o Cargo Expreso.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Es seguro para piel morena y sensible?</div>
-      <p class="faq-respuesta">Sí. La fórmula fue desarrollada pensando en piel guatemalteca. No contiene hidroquinona ni ácidos agresivos que puedan irritar piel morena o sensible.</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Qué pasa si no me funciona?</div>
-      <p class="faq-respuesta">Si usás el producto correctamente por 8 semanas y no ves ningún cambio, nos contactás por WhatsApp y buscamos una solución juntos.</p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SECCIÓN FINAL — CTA
-  ══════════════════════════════════ -->
-  <section class="seccion-cta-final" id="comprar">
-    <img class="bg" src="../generador-imagenes/imagenes-landing-maria/cta-mama-producto.jpg" alt="Mamá con sérum" />
-    <div class="cta-final-overlay"></div>
-    <div class="cta-final-content">
-      <h2 class="cta-final-titulo">
-        Ya es tiempo de que<br/>
-        <span>volvás a verte como antes</span>
-      </h2>
-      <p class="cta-final-texto">
-        Sin dermatólogo. Sin tarjeta. Sin riesgo.<br/>
-        Pagás cuando llega a tu puerta.
-      </p>
-      <div class="garantia-badge">
-        🛡️ Pago contra entrega · Envío gratis · Atención por WhatsApp
-      </div>
-
-      <!-- ═══ BOTÓN RELEASIT ═══
-           Reemplazá este bloque con tu código de Releasit
-           cuando lo tengas configurado en Shopify
-      -->
-      <a href="https://almamaya.store" class="btn-compra" style="font-size:18px; padding: 20px 24px;">
-        QUIERO EL SÉRUM AHORA
-        <small>Pago al recibir · Guatex a toda Guatemala</small>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 AlmaMaya Store · almamaya.store</p>
-    <p>Enviamos con Guatex a toda Guatemala</p>
-    <p style="margin-top: 8px;">
-      <a href="#">Política de privacidad</a> · <a href="#">Términos de compra</a>
-    </p>
-  </footer>
-
-  <!-- BOTÓN FLOTANTE -->
-  <a href="#comprar" class="btn-flotante">
-    🛒 Pedir ahora — Pago al recibir
+<!-- ══ 2. ZONA PRODUCTO ══ -->
+<section class="zona-producto">
+  <div class="producto-img-wrap">
+    <img src="../generador-imagenes/imagenes-landing-maria/producto-final.jpg" alt="Sérum Despigmentante" />
+  </div>
+  <p class="producto-subtitulo">Fórmula en gotas · Para manchas del embarazo</p>
+  <h2 class="producto-nombre">Sérum Despigmentante</h2>
+  <div class="estrellas">★★★★★</div>
+  <p class="resenas-texto">+1,200 mamás guatemaltecas · 847 reseñas</p>
+  <div class="precio-bloque">
+    <div class="precio-antes">Precio normal Q349</div>
+    <div class="precio-actual">Q200</div>
+  </div>
+  <p class="precio-nota">Precio especial de hoy · Pagás cuando llega</p>
+  <span class="envio-badge">📦 Envío gratis a toda Guatemala</span>
+  <ul class="producto-bullets">
+    <li>Actúa directo en el melasma del embarazo</li>
+    <li>Resultados visibles desde la semana 3 de uso</li>
+    <li>Sin químicos agresivos · Seguro para piel morena</li>
+    <li>Pagás en efectivo cuando llega Guatex a tu puerta</li>
+    <li>No necesitás tarjeta ni cuenta bancaria</li>
+  </ul>
+  <a href="pedido.html" class="btn-compra">
+    Lo quiero — Q200
+    <small>📦 Guatex a toda Guatemala · Pagás al recibir</small>
   </a>
+</section>
+
+<!-- ══ 3. ESPEJO EMOCIONAL ══ -->
+<section class="seccion-espejo">
+  <h2 class="espejo-titulo">
+    Si esto te pasa,<br/>
+    <span>encontraste lo que buscabas</span>
+  </h2>
+  <ul class="espejo-items">
+    <li>Te mirás al espejo en las mañanas y las manchas siguen ahí, iguales o peores</li>
+    <li>Te ponés maquillaje para salir aunque haga calor, porque sin él te da pena</li>
+    <li>En las fotos siempre buscás el ángulo donde no se noten tanto</li>
+    <li>Has probado algo — limón, crema de farmacia, remedio casero — y no funcionó</li>
+    <li>A veces pensás que ya así te vas a quedar, que ya no tiene solución</li>
+    <li>Querés volverte a ver como antes del embarazo, cuando tu piel era pareja</li>
+  </ul>
+  <p class="espejo-cierre">"Si te identificaste con aunque sea una de estas... seguí leyendo."</p>
+</section>
+
+<!-- ══ 4. CHATS WHATSAPP ══ -->
+<section class="seccion-chats">
+  <h2 class="seccion-titulo">Lo que nos escriben las mamás 💬</h2>
+  <p class="seccion-subtitulo">Mensajes reales de mujeres en Guatemala 🇬🇹</p>
+
+  <div class="chat-burbuja">
+    <div class="chat-nombre">María F. — Mixco, Guatemala</div>
+    <div class="chat-texto">
+      "Fíjese que llevaba 2 años con las manchas del embarazo y ya me había resignado. Probé limón, cremas de farmacia, de todo. Con las gotitas en un mes ya están más claras. Yo no creía pero sí funcionó 🙏"
+    </div>
+    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
+  </div>
+
+  <div class="chat-burbuja">
+    <div class="chat-nombre">Carmen A. — Villa Nueva</div>
+    <div class="chat-texto">
+      "Lo que me dio confianza fue que pagué cuando llegó. Sin tarjeta, en efectivo al mensajero. Dije 'si no llega no pierdo nada'. Llegó en 3 días y mis manchas del embarazo ya se notan mucho menos 😊"
+    </div>
+    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
+  </div>
+
+  <div class="chat-burbuja">
+    <div class="chat-nombre">Lupita G. — Escuintla</div>
+    <div class="chat-texto">
+      "Mis cuñadas me preguntaron qué me hice en la cara 😍 les dije que este sérum. Ya me pidieron que les encargara uno para ellas también. Yo estoy en mi segundo frasco."
+    </div>
+    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
+  </div>
+
+  <p class="chat-verificado">✅ Mensajes reales de clientas de Guatemala</p>
+</section>
+
+<div class="separador"></div>
+<div class="btn-bloque">
+  <a href="pedido.html" class="btn-compra">
+    Pedir el mío — Solo Q200
+    <small>Pagás cuando Guatex llega a tu puerta · Sin tarjeta</small>
+  </a>
+</div>
+
+<!-- ══ 5. PROBLEMA (imagen) ══ -->
+<section class="seccion-problema">
+  <img class="bg" src="../generador-imagenes/imagenes-landing-maria/seccion-problema.jpg" alt="" />
+  <div class="problema-overlay"></div>
+  <div class="problema-content">
+    <div class="problema-tag">Lo que nadie te explica</div>
+    <h2 class="problema-titulo">
+      Las manchas del embarazo<br/>
+      <span>no se van solas.</span><br/>
+      Y hay una razón.
+    </h2>
+    <p class="problema-texto">
+      El melasma es provocado por los cambios hormonales del embarazo. Se instala en capas profundas de la piel. El limón, las cremas de farmacia y los remedios caseros solo actúan en la superficie — por eso no funcionan. No es que tu piel sea difícil. Es que estabas usando las cosas equivocadas.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 6. POR QUÉ NADA HA FUNCIONADO ══ -->
+<section class="seccion-porque">
+  <h2 class="porque-titulo">Por qué todo lo que<br/><span>probaste no funcionó</span></h2>
+  <p class="porque-sub">No es tu culpa. El problema era la solución que estabas usando.</p>
+
+  <div class="porque-item">
+    <div class="porque-icono">🍋</div>
+    <div class="porque-texto">
+      <strong>El limón solo aclara la superficie</strong>
+      <p>El melasma está en capas más profundas de la piel. El limón no llega ahí — y encima puede irritarte si te da el sol.</p>
+    </div>
+  </div>
+  <div class="porque-item">
+    <div class="porque-icono">🏪</div>
+    <div class="porque-texto">
+      <strong>Las cremas de farmacia son muy lentas</strong>
+      <p>Están formuladas para manchas superficiales. El melasma hormonal necesita ingredientes activos que penetren más hondo.</p>
+    </div>
+  </div>
+  <div class="porque-item">
+    <div class="porque-icono">💉</div>
+    <div class="porque-texto">
+      <strong>El dermatólogo funciona pero cuesta Q800+ por sesión</strong>
+      <p>Y son múltiples sesiones. La mayoría de mamás guatemaltecas no puede pagarlo ni tiene tiempo para eso.</p>
+    </div>
+  </div>
+  <div class="porque-item">
+    <div class="porque-icono">✦</div>
+    <div class="porque-texto">
+      <strong>La solución existe — solo hay que usar lo correcto</strong>
+      <p>Un sérum de alta concentración con ingredientes que sí llegan a las capas donde se formó el melasma.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. SOLUCIÓN ══ -->
+<section class="seccion-solucion">
+  <img class="bg" src="../generador-imagenes/imagenes-landing-maria/producto-hero.jpg" alt="" />
+  <div class="solucion-overlay"></div>
+  <div class="solucion-content">
+    <h2 class="solucion-titulo">
+      Sí tiene solución.<br/>
+      <span>Sin dermatólogo.<br/>Sin tarjeta.</span>
+    </h2>
+    <p class="solucion-texto">
+      El Sérum actúa donde se forma el melasma — desde adentro, semana a semana. Es la diferencia entre tapar y curar.
+    </p>
+  </div>
+</section>
+
+<!-- ══ 8. PRODUCTO DETALLE ══ -->
+<section class="seccion-detalle">
+  <img class="detalle-img" src="../generador-imagenes/imagenes-landing-maria/ingredientes-naturales.jpg" alt="Ingredientes naturales" />
+  <h2 class="h2-sec">¿Qué tiene que lo hace diferente?</h2>
+  <p class="p-det">Ingredientes activos que sí llegan a las capas profundas donde vive el melasma.</p>
+
+  <h3 class="h3-sec">Ingredientes activos</h3>
+  <ul class="ingrediente-lista">
+    <li><strong>Vitamina C estabilizada</strong> — inhibe la melanina que forma las manchas del embarazo desde la raíz</li>
+    <li><strong>Niacinamida</strong> — aclara y unifica el tono de la piel de manera progresiva y sin irritar</li>
+    <li><strong>Ácido kójico natural</strong> — actúa directo en el melasma hormonal, el tipo más difícil de eliminar</li>
+    <li><strong>Aloe vera puro</strong> — calma e hidrata sin irritar, ideal para piel morena guatemalteca</li>
+    <li><strong>Extracto de regaliz</strong> — potencia el efecto despigmentante de forma natural y sostenida</li>
+  </ul>
+
+  <h3 class="h3-sec">Cómo usarlo</h3>
+  <ol class="modo-uso">
+    <li>Lavate la cara con tu jabón de siempre y secate bien</li>
+    <li>Aplica 4–5 gotitas en las zonas con manchas del embarazo</li>
+    <li>Masajea suavemente con la yema de los dedos por 1 minuto</li>
+    <li>Dejalo absorber 5 minutos antes de aplicar hidratante</li>
+    <li>Úsalo cada noche antes de dormir — la constancia es la clave</li>
+  </ol>
+</section>
+
+<!-- ══ 9. ANTES / DESPUÉS ══ -->
+<section class="seccion-ad">
+  <h2 class="h2-sec">Esto pasa en <span style="color:#f0c070;">6 semanas</span></h2>
+  <p class="ad-sub">Sin filtros · Sin edición · Solo el sérum aplicado cada noche</p>
+  <img class="ad-imagen" src="../generador-imagenes/imagenes-landing-maria/hook-antes-despues.jpg" alt="Antes y después del sérum despigmentante" />
+  <div class="ad-labels">
+    <span class="label-antes">← ANTES del sérum</span>
+    <span class="label-despues">DESPUÉS →</span>
+  </div>
+  <p class="ad-texto">
+    Resultado promedio en 6–8 semanas de uso constante cada noche. Manchas de melasma post-embarazo. Los resultados pueden variar según el tipo de mancha y constancia de uso.
+  </p>
+  <a href="pedido.html" class="btn-compra">
+    Quiero este resultado — Q200
+    <small>Pago al recibir · Envío gratis con Guatex</small>
+  </a>
+</section>
+
+<!-- ══ 10. TESTIMONIOS ══ -->
+<section class="seccion-testi">
+  <h2 class="seccion-titulo" style="margin-bottom:6px;">Mamás que ya borraron sus manchas</h2>
+  <p class="seccion-subtitulo">Mujeres guatemaltecas con manchas del embarazo como las tuyas</p>
+
+  <img class="testi-foto" src="../generador-imagenes/imagenes-landing-maria/testimonios-guatemaltecas.jpg" alt="Mamás guatemaltecas" />
+
+  <div class="testi-card">
+    <div class="testi-header">
+      <div class="testi-avatar">👩🏽</div>
+      <div>
+        <div class="testi-nombre">María Fernanda A.</div>
+        <div class="testi-lugar">📍 Mixco, Guatemala</div>
+      </div>
+    </div>
+    <div class="testi-estrellas">★★★★★</div>
+    <p class="testi-texto">"Tenía manchas del embarazo desde hace 2 años y ya me había resignado a vivir con ellas. Probé de todo — limón, cremas, de todo. En 6 semanas con el sérum ya se notó el cambio. Lloré de emoción cuando me vi al espejo."</p>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header">
+      <div class="testi-avatar">👩🏾</div>
+      <div>
+        <div class="testi-nombre">Carmen R.</div>
+        <div class="testi-lugar">📍 Villa Nueva, Guatemala</div>
+      </div>
+    </div>
+    <div class="testi-estrellas">★★★★★</div>
+    <p class="testi-texto">"Al principio no creía porque he comprado de todo y nada funcionó. Pero como se paga al recibirlo, dije: si no sirve, no pierdo nada. Voy por mi segundo frasco. Mis manchas del embarazo ya están mucho más claras."</p>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header">
+      <div class="testi-avatar">🧑🏽‍🦱</div>
+      <div>
+        <div class="testi-nombre">Lupita G.</div>
+        <div class="testi-lugar">📍 Escuintla, Guatemala</div>
+      </div>
+    </div>
+    <div class="testi-estrellas">★★★★★</div>
+    <p class="testi-texto">"Mis manchas eran del embarazo de mi segundo hijo. Me había resignado. Ahora mis cuñadas me preguntan qué me hice y yo les recomiendo el sérum. Ya lo pidieron ellas también. Lo que más me gustó: pagué cuando llegó, sin tarjeta."</p>
+  </div>
+</section>
+
+<div class="btn-bloque">
+  <a href="pedido.html" class="btn-compra">
+    Pedir el mío ahora — Q200
+    <small>📦 Llega en 2–4 días · Pagás al recibirlo en efectivo</small>
+  </a>
+</div>
+
+<!-- ══ 12. FAQ ══ -->
+<section class="seccion-faq">
+  <h2 class="h2-sec text-center" style="margin-bottom:8px;">Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿Funciona para manchas del embarazo (melasma)?</div>
+    <p class="faq-respuesta">Sí, está formulado especialmente para melasma hormonal. Los ingredientes activos actúan en las capas donde se forma el melasma, aclarando desde adentro — que es donde las cremas normales no llegan.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿Por qué nada de lo que probé funcionó antes?</div>
+    <p class="faq-respuesta">El melasma vive en capas profundas de la piel. El limón y las cremas comunes solo actúan en la superficie. Este sérum tiene ingredientes activos de alta concentración que sí penetran donde está la mancha.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿En cuánto tiempo veo resultados?</div>
+    <p class="faq-respuesta">La mayoría de clientas notan cambio visible entre la semana 3 y 5 de uso constante. Para manchas más profundas puede tomar 6–8 semanas. La clave es usarlo cada noche sin saltarse días.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿Puedo pagar sin tarjeta?</div>
+    <p class="faq-respuesta">Sí. Pagás en efectivo cuando el mensajero de Guatex llega a tu puerta. No necesitás cuenta bancaria, tarjeta de crédito ni nada. Solo tenés que estar en casa para recibirlo.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿Llega a mi municipio?</div>
+    <p class="faq-respuesta">Enviamos a toda Guatemala — capital, Mixco, Villa Nueva, Escuintla, Xela, Cobán, Petén y todos los departamentos con Guatex o Cargo Expreso. Envío completamente gratis.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-pregunta">¿Qué pasa si no me funciona?</div>
+    <p class="faq-respuesta">Si usás el producto correctamente por 8 semanas y no ves ningún cambio, nos contactás por WhatsApp y buscamos una solución juntos. Tu satisfacción es lo más importante para nosotros.</p>
+  </div>
+</section>
+
+<!-- ══ 12. CTA FINAL ══ -->
+<section class="seccion-cta" id="comprar">
+  <img class="bg" src="../generador-imagenes/imagenes-landing-maria/cta-mama-producto.jpg" alt="" />
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2 class="cta-titulo">
+      Ya es tiempo de que<br/>
+      <span>te volvás a ver<br/>como antes</span>
+    </h2>
+    <p class="cta-texto">
+      Sin dermatólogo. Sin tarjeta. Sin riesgo.<br/>
+      Pagás en efectivo cuando Guatex llega a tu puerta.
+    </p>
+    <div class="cta-precio-antes">Precio normal Q349</div>
+    <div class="cta-precio">Q200</div>
+    <div class="cta-precio-nota">Precio especial de hoy · Envío gratis incluido</div>
+    <div class="garantia-badge">
+      🛡️ Pago contra entrega · 📦 Envío gratis · 💬 Atención por WhatsApp
+    </div>
+    <a href="pedido.html" class="btn-compra" style="font-size:17px; padding:18px 24px;">
+      QUIERO EL SÉRUM AHORA — Q200
+      <small>Pagás al recibir · Guatex a toda Guatemala</small>
+    </a>
+    <div class="cta-garantias">
+      <span>✓ Sin tarjeta</span>
+      <span>✓ Sin riesgo</span>
+      <span>✓ Envío gratis</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 AlmaMaya Store · almamaya.store</p>
+  <p>Enviamos con Guatex a toda Guatemala</p>
+  <p style="margin-top:8px;">
+    <a href="#">Política de privacidad</a> · <a href="#">Términos de compra</a>
+  </p>
+  <p style="margin-top:6px; font-size:11px; color:#444;">Resultados pueden variar. Producto cosmético de uso externo.</p>
+</footer>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="pedido.html" class="btn-flotante">
+  🛒 Pedir ahora — Solo Q200
+</a>
+
+<script></script>
 
 </body>
 </html>
