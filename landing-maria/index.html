@@ -106,23 +106,35 @@
       margin-bottom: 28px;
       font-style: italic;
     }
+    @keyframes btnWiggle {
+      0%,100% { transform: rotate(0deg) translateY(0); }
+      15%      { transform: rotate(-1.5deg) translateY(-1px); }
+      30%      { transform: rotate(1.5deg) translateY(1px); }
+      45%      { transform: rotate(-1deg) translateY(0); }
+      60%      { transform: rotate(1deg) translateY(-1px); }
+      75%      { transform: rotate(0deg) translateY(0); }
+    }
     .btn-compra {
       display: block;
       width: 100%;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
       background: #c8a96e;
       color: #fff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
-      padding: 16px 20px;
+      padding: 13px 18px;
       border-radius: 10px;
       letter-spacing: 0.3px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
       font-family: 'Segoe UI', sans-serif;
+      animation: btnWiggle 3s ease-in-out infinite;
+      text-align: center;
     }
-    .btn-compra:hover { background: #b8944f; transform: translateY(-1px); }
+    .btn-compra:hover { background: #b8944f; }
     .btn-compra small {
       display: block;
       font-size: 11px;
@@ -144,25 +156,94 @@
     }
 
     /* ══ BARRA CONFIANZA ══ */
-    .trust-bar {
+    /* ══ SHIPPING TRACKER ══ */
+    .shipping-tracker {
       background: #faf8f4;
       border-bottom: 1px solid #ede8de;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      padding: 20px 24px 22px;
     }
-    .trust-item {
+    .shipping-tracker-inner {
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+    }
+    .st-rail {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      height: 2px;
+      background: #e0d5c0;
+      z-index: 0;
+    }
+    .st-fill {
+      height: 100%;
+      background: #c8a96e;
+      width: 0%;
+      transition: width 0.7s ease;
+    }
+    .st-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+    .st-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 12px 18px;
-      font-size: 12px;
+      justify-content: center;
+      font-size: 15px;
       font-weight: 700;
-      color: #555;
-      border-right: 1px solid #ede8de;
       font-family: 'Segoe UI', sans-serif;
+      flex-shrink: 0;
+      transition: all 0.4s ease;
     }
-    .trust-item:last-child { border-right: none; }
+    .st-circle.done {
+      background: #c8a96e;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(200,169,110,0.45);
+    }
+    .st-circle.active {
+      background: #fff;
+      color: #c8a96e;
+      border: 2.5px solid #c8a96e;
+      box-shadow: 0 0 0 4px rgba(200,169,110,0.15);
+    }
+    .st-circle.pending {
+      background: #fff;
+      color: #ccc;
+      border: 2px solid #ddd;
+    }
+    .st-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #aaa;
+      text-align: center;
+      line-height: 1.3;
+      font-family: 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      transition: color 0.4s;
+    }
+    .st-label.active-label { color: #c8a96e; }
+    .st-label.done-label { color: #888; }
+    .st-sublabel {
+      font-size: 9px;
+      color: #bbb;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      margin-top: -4px;
+    }
+    .st-sublabel.highlight { color: #c8a96e; font-weight: 700; }
 
     /* ══ 2. ZONA PRODUCTO ══ */
     .zona-producto {
@@ -306,8 +387,8 @@
 
     /* ══ 4. CHATS ══ */
     .seccion-chats {
-      background: #fff;
-      padding: 44px 24px;
+      background: #f0ebe0;
+      padding: 44px 0 36px;
     }
     .seccion-titulo {
       font-size: 18px;
@@ -315,6 +396,7 @@
       text-align: center;
       margin-bottom: 6px;
       color: #1a1a1a;
+      padding: 0 24px;
     }
     .seccion-subtitulo {
       font-size: 13px;
@@ -322,46 +404,136 @@
       text-align: center;
       margin-bottom: 24px;
       font-family: 'Segoe UI', sans-serif;
+      padding: 0 24px;
     }
-    .chat-burbuja {
-      background: #e7fce8;
-      border-radius: 16px 16px 16px 4px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-      border: 1px solid #d0ebd0;
+
+    /* ── WA SLIDER ── */
+    .wa-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      padding-bottom: 20px;
     }
-    .chat-nombre {
-      font-size: 12px;
+    .wa-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .wa-slide {
+      flex: 0 0 100%;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* ── MOCKUP WHATSAPP ── */
+    .wa-phone {
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+    .wa-header {
+      background: #075E54;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+    }
+    .wa-av {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      flex-shrink: 0;
+    }
+    .wa-hinfo { display: flex; flex-direction: column; }
+    .wa-hname {
+      font-size: 14px;
       font-weight: 700;
-      color: #2e7d32;
-      margin-bottom: 5px;
+      color: #fff;
       font-family: 'Segoe UI', sans-serif;
     }
-    .chat-texto {
+    .wa-hstate {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .wa-body {
+      background: #ece5dd;
+      padding: 20px 16px 16px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .wa-msg {
+      background: #fff;
+      border-radius: 0px 10px 10px 10px;
+      padding: 10px 12px 6px;
+      max-width: 90%;
+      align-self: flex-start;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      position: relative;
+    }
+    .wa-msg-text {
       font-size: 14px;
       color: #1a1a1a;
       line-height: 1.55;
       font-family: 'Segoe UI', sans-serif;
     }
-    .chat-hora {
-      font-size: 11px;
+    .wa-msg-meta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .wa-msg-time {
+      font-size: 10px;
       color: #999;
-      text-align: right;
-      margin-top: 5px;
       font-family: 'Segoe UI', sans-serif;
     }
+    .wa-ticks { color: #34B7F1; font-size: 12px; }
+
+    /* ── DOTS ── */
+    .wa-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .wa-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .wa-dot.active {
+      background: #075E54;
+      transform: scale(1.3);
+    }
+
     .chat-verificado {
       font-size: 11px;
-      color: #666;
+      color: #888;
       text-align: center;
-      margin-top: 16px;
+      margin-top: 6px;
       font-family: 'Segoe UI', sans-serif;
+      padding: 0 24px;
     }
 
     /* ══ 5. PROBLEMA (imagen) ══ */
     .seccion-problema {
       position: relative;
-      min-height: 500px;
+      min-height: 580px;
       display: flex;
       align-items: flex-end;
     }
@@ -372,13 +544,14 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
+      filter: brightness(1.08) contrast(1.06);
     }
     .problema-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(to top,
-        rgba(10,5,0,0.93) 0%,
-        rgba(10,5,0,0.45) 55%,
+        rgba(10,5,0,0.96) 0%,
+        rgba(10,5,0,0.35) 45%,
         transparent 100%);
     }
     .problema-content {
@@ -595,31 +768,104 @@
 
     /* ══ 9. ANTES / DESPUÉS ══ */
     .seccion-ad {
-      background: #1a1a1a;
+      background: #111;
       padding: 48px 24px;
       text-align: center;
     }
     .seccion-ad .h2-sec { color: #fff; margin-bottom: 6px; }
-    .ad-sub { color: #888; font-size: 14px; margin-bottom: 28px; font-family: 'Segoe UI', sans-serif; }
-    .ad-imagen {
+    .ad-sub { color: #888; font-size: 14px; margin-bottom: 24px; font-family: 'Segoe UI', sans-serif; }
+
+    /* ── SLIDER ANTES/DESPUÉS ── */
+    .ba-slider {
+      position: relative;
       width: 100%;
-      border-radius: 14px;
-      margin-bottom: 14px;
-      display: block;
+      max-width: 440px;
+      margin: 0 auto 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6);
     }
-    .ad-labels {
+    .ba-before {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .ba-after-wrap {
+      position: absolute;
+      top: 0; left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .ba-after-wrap img {
+      display: block;
+      width: 440px;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 100%;
       display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 20px;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+    .ba-line {
+      flex: 1;
+      width: 3px;
+      background: #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    }
+    .ba-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+      font-size: 16px;
+      font-weight: 900;
+      color: #1a1a1a;
       font-family: 'Segoe UI', sans-serif;
     }
-    .label-antes { color: #e74c3c; }
-    .label-despues { color: #2ecc71; }
+    .ba-tag {
+      position: absolute;
+      top: 14px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .ba-tag-antes {
+      left: 12px;
+      background: rgba(0,0,0,0.6);
+      color: #ff6b6b;
+      border: 1.5px solid #ff6b6b;
+    }
+    .ba-tag-despues {
+      right: 12px;
+      background: rgba(0,0,0,0.6);
+      color: #68d391;
+      border: 1.5px solid #68d391;
+    }
     .ad-texto {
-      color: rgba(255,255,255,0.7);
-      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
       line-height: 1.65;
       font-family: 'Segoe UI', sans-serif;
       margin-bottom: 28px;
@@ -628,44 +874,139 @@
     /* ══ 10. TESTIMONIOS ══ */
     .seccion-testi {
       background: #fff;
-      padding: 48px 24px;
+      padding: 48px 0 36px;
     }
+    .seccion-testi .seccion-titulo { padding: 0 24px; }
+    .seccion-testi .seccion-subtitulo { padding: 0 24px; }
     .testi-foto {
+      width: calc(100% - 48px);
+      margin: 0 24px 24px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    }
+
+    /* ── TESTI SLIDER ── */
+    .testi-slider { overflow: hidden; position: relative; width: 100%; padding-bottom: 20px; }
+    .testi-track  { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .testi-slide  { flex: 0 0 100%; padding: 0 24px; box-sizing: border-box; }
+
+    .testi-card {
+      background: #faf8f4;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e8d9c0;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+    .testi-prod-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      object-position: center;
       display: block;
     }
-    .testi-card {
-      background: #faf8f4;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 14px;
-      border-left: 3px solid #c8a96e;
-    }
+    .testi-body { padding: 18px 18px 16px; }
     .testi-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 10px;
     }
     .testi-avatar {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       background: #e8d9c0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 26px;
       flex-shrink: 0;
+      border: 2px solid #c8a96e;
     }
     .testi-nombre { font-size: 14px; font-weight: 700; color: #1a1a1a; }
-    .testi-lugar { font-size: 12px; color: #999; font-family: 'Segoe UI', sans-serif; }
-    .testi-estrellas { color: #f5a623; font-size: 14px; margin-bottom: 7px; }
-    .testi-texto { font-size: 14px; color: #444; line-height: 1.65; font-family: 'Segoe UI', sans-serif; }
+    .testi-lugar  { font-size: 12px; color: #999; font-family: 'Segoe UI', sans-serif; }
+    .testi-estrellas { color: #f5a623; font-size: 15px; margin-bottom: 8px; }
+    .testi-texto  { font-size: 14px; color: #444; line-height: 1.65; font-family: 'Segoe UI', sans-serif; }
+    .testi-dots   { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+    .testi-dot    { width: 7px; height: 7px; border-radius: 50%; background: #ddd; transition: background 0.3s, transform 0.3s; cursor: pointer; }
+    .testi-dot.active { background: #c8a96e; transform: scale(1.3); }
+
+    /* ══ 11.5 URGENCIA ══ */
+    @keyframes timerPulse {
+      0%,100% { transform: scale(1); }
+      50%      { transform: scale(1.06); }
+    }
+    .seccion-urgencia {
+      background: linear-gradient(135deg, #1a0a00 0%, #3d1a00 100%);
+      padding: 28px 20px 24px;
+      text-align: center;
+    }
+    .urg-label {
+      font-size: 12px;
+      color: #f0c070;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .urg-timer {
+      font-size: 48px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI', monospace;
+      animation: timerPulse 1s ease-in-out infinite;
+      margin-bottom: 6px;
+    }
+    .urg-frase {
+      font-size: 13px;
+      color: #f0c070;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .urg-promos {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .urg-promo {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 8px;
+      padding: 7px 10px;
+      flex: 1;
+      max-width: 110px;
+    }
+    .urg-promo--hot {
+      background: rgba(200,169,110,0.18);
+      border-color: #c8a96e;
+    }
+    .urg-qty {
+      display: block;
+      font-size: 11px;
+      color: #ccc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .urg-price {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .urg-price em {
+      display: block;
+      font-size: 10px;
+      font-style: normal;
+      color: #f0c070;
+    }
+    .urg-btn { font-size: 14px; }
 
     /* ══ 11. FAQ ══ */
     .seccion-faq { background: #faf8f4; padding: 48px 24px; }
@@ -1002,6 +1343,203 @@
     }
     .escasez strong { color: #ff6b6b; }
 
+    /* ══ SOCIAL PROOF POPUP ══ */
+    .sp-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 16px;
+      z-index: 998;
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      border-left: 4px solid #c8a96e;
+      max-width: 280px;
+      transform: translateX(-120%);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .sp-popup.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .sp-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #c8a96e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      flex-shrink: 0;
+      text-transform: uppercase;
+    }
+    .sp-texto { display: flex; flex-direction: column; gap: 2px; }
+    .sp-nombre {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .sp-accion {
+      font-size: 11px;
+      color: #666;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.3;
+    }
+    .sp-tiempo {
+      font-size: 10px;
+      color: #c8a96e;
+      font-weight: 700;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* ══ STICKY BAR ══ */
+    .sticky-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #1a1a1a;
+      border-bottom: 2px solid #c8a96e;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transform: translateY(-110%);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+    .sticky-bar.visible {
+      transform: translateY(0);
+    }
+    .sticky-bar-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .sticky-bar-nombre {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .sticky-bar-cta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Segoe UI', sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sticky-bar-btn {
+      background: #c8a96e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      font-family: 'Segoe UI', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .sticky-bar-btn:hover {
+      background: #b8944f;
+      transform: translateY(-1px);
+    }
+
+    /* ══ SELECTOR DE CANTIDAD ══ */
+    .qty-selector {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      margin-bottom: 14px;
+      border: 2px solid #e8dcc8;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .qty-option {
+      position: relative;
+      flex: 1;
+      padding: 14px 8px 12px;
+      cursor: pointer;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+      border-right: 2px solid #e8dcc8;
+      transition: background 0.2s;
+    }
+    .qty-option:last-child { border-right: none; }
+    .qty-option:hover { background: #fdf8f0; }
+    .qty-option.selected {
+      background: #fdf8f0;
+      box-shadow: inset 0 0 0 2px #c8a96e;
+    }
+    .qty-badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c8a96e;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: 0 0 8px 8px;
+      white-space: nowrap;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .qty-cant {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      margin-top: 10px;
+    }
+    .qty-precio {
+      font-size: 20px;
+      font-weight: 900;
+      color: #c8a96e;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.1;
+    }
+    .qty-unitario {
+      font-size: 10px;
+      color: #aaa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .qty-ahorro {
+      font-size: 10px;
+      font-weight: 700;
+      color: #5a9e6f;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
   </style>
 </head>
 <body>
@@ -1028,9 +1566,9 @@
       Ya sabés que no se van solas.
     </p>
     <p class="hero-nota">+1,200 mamás guatemaltecas ya las están borrando</p>
-    <a href="pedido.html" class="btn-compra" style="font-size:13px; padding:12px 20px;">
-      Quiero saber cómo quitármelas
-      <small>Solo Q200 · Pagás cuando llega a tu puerta</small>
+    <a href="pedido.html" class="btn-compra">
+      Pide ahora · Paga en casa
+      <small>Sin tarjeta · Sin riesgo</small>
     </a>
     <div class="hero-garantias">
       <span>✓ Sin tarjeta</span>
@@ -1041,11 +1579,27 @@
 </section>
 
 <!-- BARRA CONFIANZA -->
-<div class="trust-bar">
-  <div class="trust-item">📦 Envío Gratis</div>
-  <div class="trust-item">💵 Pago al Recibir</div>
-  <div class="trust-item">⚡ 2–4 Días</div>
-  <div class="trust-item">🛡️ Garantía 30 días</div>
+<div class="shipping-tracker">
+  <div class="shipping-tracker-inner">
+    <div class="st-rail"><div class="st-fill" id="stFill"></div></div>
+
+    <div class="st-step" id="stStep1">
+      <div class="st-circle pending" id="stCircle1">1</div>
+      <div class="st-label" id="stLabel1">Pedido<br/>recibido</div>
+    </div>
+
+    <div class="st-step" id="stStep2">
+      <div class="st-circle pending" id="stCircle2">🚚</div>
+      <div class="st-label" id="stLabel2">En<br/>camino</div>
+    </div>
+
+    <div class="st-step" id="stStep3">
+      <div class="st-circle pending" id="stCircle3">📦</div>
+      <div class="st-label" id="stLabel3">Entregado</div>
+      <div class="st-sublabel" id="stSub3">Máx. 5 días</div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ══ 2. ZONA PRODUCTO ══ -->
@@ -1057,22 +1611,44 @@
   <h2 class="producto-nombre">Sérum Despigmentante</h2>
   <div class="estrellas">★★★★★</div>
   <p class="resenas-texto">+1,200 mamás guatemaltecas · 847 reseñas</p>
-  <div class="precio-bloque">
-    <div class="precio-antes">Precio normal Q349</div>
-    <div class="precio-actual">Q200</div>
-  </div>
-  <p class="precio-nota">Precio especial de hoy · Pagás cuando llega</p>
   <span class="envio-badge">📦 Envío gratis a toda Guatemala</span>
   <ul class="producto-bullets">
     <li>Actúa directo en el melasma del embarazo</li>
     <li>Resultados visibles desde la semana 3 de uso</li>
     <li>Sin químicos agresivos · Seguro para piel morena</li>
-    <li>Pagás en efectivo cuando llega Guatex a tu puerta</li>
+    <li>Pagás en efectivo cuando llega a tu puerta</li>
     <li>No necesitás tarjeta ni cuenta bancaria</li>
   </ul>
-  <a href="pedido.html" class="btn-compra">
-    Lo quiero — Q200
-    <small>📦 Guatex a toda Guatemala · Pagás al recibir</small>
+
+  <!-- SELECTOR DE CANTIDAD -->
+  <div class="qty-selector">
+
+    <div class="qty-option" data-qty="1" data-price="200">
+      <span class="qty-cant">1 frasco</span>
+      <span class="qty-precio">Q200</span>
+      <span class="qty-unitario">Q200/frasco</span>
+    </div>
+
+    <div class="qty-option popular selected" data-qty="2" data-price="360">
+      <div class="qty-badge">⭐ Popular</div>
+      <span class="qty-cant">2 frascos</span>
+      <span class="qty-precio">Q360</span>
+      <span class="qty-unitario">Q180/frasco</span>
+      <span class="qty-ahorro">Ahorrás Q40</span>
+    </div>
+
+    <div class="qty-option" data-qty="3" data-price="500">
+      <span class="qty-cant">3 frascos</span>
+      <span class="qty-precio">Q500</span>
+      <span class="qty-unitario">Q167/frasco</span>
+      <span class="qty-ahorro">Ahorrás Q100</span>
+    </div>
+
+  </div>
+
+  <a href="pedido.html?qty=2" class="btn-compra" id="btnCompraZona2">
+    Pide ahora y paga en casa
+    <small>Envío gratis · Sin tarjeta · Sin riesgo</small>
   </a>
 </section>
 
@@ -1083,12 +1659,9 @@
     <span>encontraste lo que buscabas</span>
   </h2>
   <ul class="espejo-items">
-    <li>Te mirás al espejo en las mañanas y las manchas siguen ahí, iguales o peores</li>
-    <li>Te ponés maquillaje para salir aunque haga calor, porque sin él te da pena</li>
-    <li>En las fotos siempre buscás el ángulo donde no se noten tanto</li>
-    <li>Has probado algo — limón, crema de farmacia, remedio casero — y no funcionó</li>
-    <li>A veces pensás que ya así te vas a quedar, que ya no tiene solución</li>
-    <li>Querés volverte a ver como antes del embarazo, cuando tu piel era pareja</li>
+    <li>Cada mañana las manchas siguen ahí — y ya probaste de todo sin resultado</li>
+    <li>Te cubrís con ropa o maquillaje aunque haga calor, por pena a que se noten</li>
+    <li>En el fondo ya creés que así te vas a quedar, que no tiene solución</li>
   </ul>
   <p class="espejo-cierre">"Si te identificaste con aunque sea una de estas... seguí leyendo."</p>
 </section>
@@ -1098,28 +1671,105 @@
   <h2 class="seccion-titulo">Lo que nos escriben las mamás 💬</h2>
   <p class="seccion-subtitulo">Mensajes reales de mujeres en Guatemala 🇬🇹</p>
 
-  <div class="chat-burbuja">
-    <div class="chat-nombre">María F. — Mixco, Guatemala</div>
-    <div class="chat-texto">
-      "Fíjese que llevaba 2 años con las manchas del embarazo y ya me había resignado. Probé limón, cremas de farmacia, de todo. Con las gotitas en un mes ya están más claras. Yo no creía pero sí funcionó 🙏"
-    </div>
-    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
-  </div>
+  <div class="wa-slider" id="waSlider">
+    <div class="wa-track" id="waTrack">
 
-  <div class="chat-burbuja">
-    <div class="chat-nombre">Carmen A. — Villa Nueva</div>
-    <div class="chat-texto">
-      "Lo que me dio confianza fue que pagué cuando llegó. Sin tarjeta, en efectivo al mensajero. Dije 'si no llega no pierdo nada'. Llegó en 3 días y mis manchas del embarazo ya se notan mucho menos 😊"
-    </div>
-    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
-  </div>
+      <!-- MENSAJE 1 -->
+      <div class="wa-slide">
+        <div class="wa-phone">
+          <div class="wa-header">
+            <div class="wa-av">M</div>
+            <div class="wa-hinfo">
+              <span class="wa-hname">María F. — Mixco</span>
+              <span class="wa-hstate">en línea</span>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <p class="wa-msg-text">Fíjese que llevaba 2 años con las manchas del embarazo y ya me había resignado. Probé limón, cremas de farmacia, de todo. Con las gotitas en un mes ya están más claras. Yo no creía pero sí funcionó 🙏</p>
+              <div class="wa-msg-meta">
+                <span class="wa-msg-time">9:42 AM</span>
+                <span class="wa-ticks">✓✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="chat-burbuja">
-    <div class="chat-nombre">Lupita G. — Escuintla</div>
-    <div class="chat-texto">
-      "Mis cuñadas me preguntaron qué me hice en la cara 😍 les dije que este sérum. Ya me pidieron que les encargara uno para ellas también. Yo estoy en mi segundo frasco."
+      <!-- MENSAJE 2 -->
+      <div class="wa-slide">
+        <div class="wa-phone">
+          <div class="wa-header">
+            <div class="wa-av">C</div>
+            <div class="wa-hinfo">
+              <span class="wa-hname">Carmen A. — Villa Nueva</span>
+              <span class="wa-hstate">en línea</span>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <p class="wa-msg-text">Lo que me dio confianza fue que pagué cuando llegó. Sin tarjeta, en efectivo al mensajero. Dije "si no llega no pierdo nada". Llegó en 3 días y mis manchas del embarazo ya se notan mucho menos 😊</p>
+              <div class="wa-msg-meta">
+                <span class="wa-msg-time">2:18 PM</span>
+                <span class="wa-ticks">✓✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENSAJE 3 -->
+      <div class="wa-slide">
+        <div class="wa-phone">
+          <div class="wa-header">
+            <div class="wa-av">L</div>
+            <div class="wa-hinfo">
+              <span class="wa-hname">Lupita G. — Escuintla</span>
+              <span class="wa-hstate">en línea</span>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <p class="wa-msg-text">Mis cuñadas me preguntaron qué me hice en la cara 😍 les dije que este sérum. Ya me pidieron que les encargara uno para ellas también. Yo estoy en mi segundo frasco.</p>
+              <div class="wa-msg-meta">
+                <span class="wa-msg-time">7:05 PM</span>
+                <span class="wa-ticks">✓✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENSAJE 4 -->
+      <div class="wa-slide">
+        <div class="wa-phone">
+          <div class="wa-header">
+            <div class="wa-av">P</div>
+            <div class="wa-hinfo">
+              <span class="wa-hname">Patricia V. — Petén</span>
+              <span class="wa-hstate">en línea</span>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <p class="wa-msg-text">Buenas! Solo quería avisarle que después de 3 semanas mis manchas del embarazo ya casi no se ven 😭❤️ Mi esposo dice que me veo como cuando nos casamos. Gracias de verdad.</p>
+              <div class="wa-msg-meta">
+                <span class="wa-msg-time">11:30 AM</span>
+                <span class="wa-ticks">✓✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /wa-track -->
+
+    <div class="wa-dots" id="waDots">
+      <span class="wa-dot active" data-i="0"></span>
+      <span class="wa-dot" data-i="1"></span>
+      <span class="wa-dot" data-i="2"></span>
+      <span class="wa-dot" data-i="3"></span>
     </div>
-    <div class="chat-hora">✓✓ Leído · Clienta verificada</div>
   </div>
 
   <p class="chat-verificado">✅ Mensajes reales de clientas de Guatemala</p>
@@ -1128,8 +1778,8 @@
 <div class="separador"></div>
 <div class="btn-bloque">
   <a href="pedido.html" class="btn-compra">
-    Pedir el mío — Solo Q200
-    <small>Pagás cuando Guatex llega a tu puerta · Sin tarjeta</small>
+    Pide ahora · Paga en casa
+    <small>Envío gratis · Sin tarjeta</small>
   </a>
 </div>
 
@@ -1145,7 +1795,7 @@
       Y hay una razón.
     </h2>
     <p class="problema-texto">
-      El melasma es provocado por los cambios hormonales del embarazo. Se instala en capas profundas de la piel. El limón, las cremas de farmacia y los remedios caseros solo actúan en la superficie — por eso no funcionan. No es que tu piel sea difícil. Es que estabas usando las cosas equivocadas.
+      El melasma vive en capas profundas. El limón, las cremas, los remedios — solo tocan la superficie. No es tu piel. Nunca fue tu piel. Era lo que estabas usando.
     </p>
   </div>
 </section>
@@ -1187,7 +1837,7 @@
 
 <!-- ══ 7. SOLUCIÓN ══ -->
 <section class="seccion-solucion">
-  <img class="bg" src="../generador-imagenes/imagenes-landing-maria/producto-hero.jpg" alt="" />
+  <img class="bg" src="../generador-imagenes/imagenes-landing-maria/seccion7-nueva.jpg" alt="" />
   <div class="solucion-overlay"></div>
   <div class="solucion-content">
     <h2 class="solucion-titulo">
@@ -1228,18 +1878,32 @@
 <!-- ══ 9. ANTES / DESPUÉS ══ -->
 <section class="seccion-ad">
   <h2 class="h2-sec">Esto pasa en <span style="color:#f0c070;">6 semanas</span></h2>
-  <p class="ad-sub">Sin filtros · Sin edición · Solo el sérum aplicado cada noche</p>
-  <img class="ad-imagen" src="../generador-imagenes/imagenes-landing-maria/hook-antes-despues.jpg" alt="Antes y después del sérum despigmentante" />
-  <div class="ad-labels">
-    <span class="label-antes">← ANTES del sérum</span>
-    <span class="label-despues">DESPUÉS →</span>
+  <p class="ad-sub">Arrastrá el centro para ver el cambio · Sin filtros · Sin edición</p>
+
+  <div class="ba-slider" id="baSlider">
+    <!-- ANTES (fondo completo) -->
+    <img class="ba-before" src="../landing-serum/imagenes/hook-antes.jpg" alt="Antes" />
+    <!-- DESPUÉS (revelado con el drag) -->
+    <div class="ba-after-wrap" id="baAfterWrap">
+      <img src="../landing-serum/imagenes/hook-despues.jpg" alt="Después" />
+    </div>
+    <!-- HANDLE -->
+    <div class="ba-handle" id="baHandle">
+      <div class="ba-line"></div>
+      <div class="ba-btn">‹›</div>
+      <div class="ba-line"></div>
+    </div>
+    <!-- ETIQUETAS -->
+    <div class="ba-tag ba-tag-antes">✗ Antes</div>
+    <div class="ba-tag ba-tag-despues">✓ Después</div>
   </div>
+
   <p class="ad-texto">
-    Resultado promedio en 6–8 semanas de uso constante cada noche. Manchas de melasma post-embarazo. Los resultados pueden variar según el tipo de mancha y constancia de uso.
+    Resultado promedio en 6–8 semanas de uso constante cada noche.<br/>Los resultados pueden variar.
   </p>
   <a href="pedido.html" class="btn-compra">
-    Quiero este resultado — Q200
-    <small>Pago al recibir · Envío gratis con Guatex</small>
+    Pide ahora · Paga en casa
+    <small>Pago al recibir · Envío gratis</small>
   </a>
 </section>
 
@@ -1250,49 +1914,141 @@
 
   <img class="testi-foto" src="../generador-imagenes/imagenes-landing-maria/testimonios-guatemaltecas.jpg" alt="Mamás guatemaltecas" />
 
-  <div class="testi-card">
-    <div class="testi-header">
-      <div class="testi-avatar">👩🏽</div>
-      <div>
-        <div class="testi-nombre">María Fernanda A.</div>
-        <div class="testi-lugar">📍 Mixco, Guatemala</div>
+  <div class="testi-slider" id="testiSlider">
+    <div class="testi-track" id="testiTrack">
+
+      <!-- RESEÑA 1 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-body">
+            <div class="testi-header">
+              <div class="testi-avatar">👩🏽</div>
+              <div>
+                <div class="testi-nombre">María Fernanda A.</div>
+                <div class="testi-lugar">📍 Mixco, Guatemala</div>
+              </div>
+            </div>
+            <div class="testi-estrellas">★★★★★</div>
+            <p class="testi-texto">"Tenía manchas del embarazo desde hace 2 años y ya me había resignado. Probé de todo — limón, cremas, de todo. En 6 semanas con el sérum ya se notó el cambio. Lloré de emoción cuando me vi al espejo."</p>
+          </div>
+        </div>
       </div>
+
+      <!-- RESEÑA 2 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-body">
+            <div class="testi-header">
+              <div class="testi-avatar">👩🏾</div>
+              <div>
+                <div class="testi-nombre">Carmen R.</div>
+                <div class="testi-lugar">📍 Villa Nueva, Guatemala</div>
+              </div>
+            </div>
+            <div class="testi-estrellas">★★★★★</div>
+            <p class="testi-texto">"Al principio no creía porque he comprado de todo y nada funcionó. Pero como se paga al recibirlo, dije: si no sirve, no pierdo nada. Voy por mi segundo frasco y mis manchas ya están mucho más claras."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEÑA 3 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-body">
+            <div class="testi-header">
+              <div class="testi-avatar">🧑🏽‍🦱</div>
+              <div>
+                <div class="testi-nombre">Lupita G.</div>
+                <div class="testi-lugar">📍 Escuintla, Guatemala</div>
+              </div>
+            </div>
+            <div class="testi-estrellas">★★★★★</div>
+            <p class="testi-texto">"Ahora mis cuñadas me preguntan qué me hice y yo les recomiendo el sérum. Ya lo pidieron ellas también. Lo que más me gustó: pagué cuando llegó, sin tarjeta, sin riesgo."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEÑA 4 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-body">
+            <div class="testi-header">
+              <div class="testi-avatar">👩🏻</div>
+              <div>
+                <div class="testi-nombre">Rosa G.</div>
+                <div class="testi-lugar">📍 Cobán, Alta Verapaz</div>
+              </div>
+            </div>
+            <div class="testi-estrellas">★★★★★</div>
+            <p class="testi-texto">"Me llegó en 4 días. Empecé a usarlo esa misma noche. A la tercera semana mi esposo me dijo que se me veía diferente, más bonita. Yo sé que son las manchas que ya van cediendo. Feliz de haberlo intentado."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEÑA 5 -->
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-body">
+            <div class="testi-header">
+              <div class="testi-avatar">👩🏽‍🦰</div>
+              <div>
+                <div class="testi-nombre">Sofía H.</div>
+                <div class="testi-lugar">📍 Xela, Quetzaltenango</div>
+              </div>
+            </div>
+            <div class="testi-estrellas">★★★★★</div>
+            <p class="testi-texto">"Soy enfermera y siempre desconfío de estos productos. Pero mi dermatologa me dijo que los ingredientes son correctos para el melasma. Lo pedí. Dos meses después mis pacientes me preguntan qué me hice en la cara."</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /testi-track -->
+
+    <div class="testi-dots" id="testiDots">
+      <span class="testi-dot active" data-i="0"></span>
+      <span class="testi-dot" data-i="1"></span>
+      <span class="testi-dot" data-i="2"></span>
+      <span class="testi-dot" data-i="3"></span>
+      <span class="testi-dot" data-i="4"></span>
     </div>
-    <div class="testi-estrellas">★★★★★</div>
-    <p class="testi-texto">"Tenía manchas del embarazo desde hace 2 años y ya me había resignado a vivir con ellas. Probé de todo — limón, cremas, de todo. En 6 semanas con el sérum ya se notó el cambio. Lloré de emoción cuando me vi al espejo."</p>
   </div>
 
-  <div class="testi-card">
-    <div class="testi-header">
-      <div class="testi-avatar">👩🏾</div>
-      <div>
-        <div class="testi-nombre">Carmen R.</div>
-        <div class="testi-lugar">📍 Villa Nueva, Guatemala</div>
-      </div>
-    </div>
-    <div class="testi-estrellas">★★★★★</div>
-    <p class="testi-texto">"Al principio no creía porque he comprado de todo y nada funcionó. Pero como se paga al recibirlo, dije: si no sirve, no pierdo nada. Voy por mi segundo frasco. Mis manchas del embarazo ya están mucho más claras."</p>
-  </div>
-
-  <div class="testi-card">
-    <div class="testi-header">
-      <div class="testi-avatar">🧑🏽‍🦱</div>
-      <div>
-        <div class="testi-nombre">Lupita G.</div>
-        <div class="testi-lugar">📍 Escuintla, Guatemala</div>
-      </div>
-    </div>
-    <div class="testi-estrellas">★★★★★</div>
-    <p class="testi-texto">"Mis manchas eran del embarazo de mi segundo hijo. Me había resignado. Ahora mis cuñadas me preguntan qué me hice y yo les recomiendo el sérum. Ya lo pidieron ellas también. Lo que más me gustó: pagué cuando llegó, sin tarjeta."</p>
-  </div>
 </section>
 
 <div class="btn-bloque">
   <a href="pedido.html" class="btn-compra">
-    Pedir el mío ahora — Q200
+    Pide ahora · Paga en casa
     <small>📦 Llega en 2–4 días · Pagás al recibirlo en efectivo</small>
   </a>
 </div>
+
+<!-- ══ 11.5 URGENCIA COUNTDOWN ══ -->
+<section class="seccion-urgencia" id="seccionUrgencia">
+  <p class="urg-label">⚡ Oferta especial disponible por:</p>
+  <div class="urg-timer" id="urgTimer">05:00</div>
+  <p class="urg-frase">Pedir ahora antes que se agote</p>
+
+  <!-- Promos pequeñas -->
+  <div class="urg-promos">
+    <div class="urg-promo">
+      <span class="urg-qty">1 frasco</span>
+      <span class="urg-price">Q221</span>
+    </div>
+    <div class="urg-promo urg-promo--hot">
+      <span class="urg-qty">2 frascos</span>
+      <span class="urg-price">Q380 <em>ahorrás Q62</em></span>
+    </div>
+    <div class="urg-promo">
+      <span class="urg-qty">3 frascos</span>
+      <span class="urg-price">Q530 <em>ahorrás Q133</em></span>
+    </div>
+  </div>
+
+  <a href="pedido.html" class="btn-compra urg-btn">
+    Pide ahora · Paga en casa
+    <small>Envío gratis · Sin tarjeta</small>
+  </a>
+</section>
 
 <!-- ══ 12. FAQ ══ -->
 <section class="seccion-faq">
@@ -1315,12 +2071,12 @@
 
   <div class="faq-item">
     <div class="faq-pregunta">¿Puedo pagar sin tarjeta?</div>
-    <p class="faq-respuesta">Sí. Pagás en efectivo cuando el mensajero de Guatex llega a tu puerta. No necesitás cuenta bancaria, tarjeta de crédito ni nada. Solo tenés que estar en casa para recibirlo.</p>
+    <p class="faq-respuesta">Sí. Pagás en efectivo cuando el mensajero llega a tu puerta. No necesitás cuenta bancaria, tarjeta de crédito ni nada. Solo tenés que estar en casa para recibirlo.</p>
   </div>
 
   <div class="faq-item">
     <div class="faq-pregunta">¿Llega a mi municipio?</div>
-    <p class="faq-respuesta">Enviamos a toda Guatemala — capital, Mixco, Villa Nueva, Escuintla, Xela, Cobán, Petén y todos los departamentos con Guatex o Cargo Expreso. Envío completamente gratis.</p>
+    <p class="faq-respuesta">Enviamos a toda Guatemala — capital, Mixco, Villa Nueva, Escuintla, Xela, Cobán, Petén y todos los departamentos. Envío completamente gratis.</p>
   </div>
 
   <div class="faq-item">
@@ -1340,17 +2096,14 @@
     </h2>
     <p class="cta-texto">
       Sin dermatólogo. Sin tarjeta. Sin riesgo.<br/>
-      Pagás en efectivo cuando Guatex llega a tu puerta.
+      Pagás en efectivo cuando llega a tu puerta.
     </p>
-    <div class="cta-precio-antes">Precio normal Q349</div>
-    <div class="cta-precio">Q200</div>
-    <div class="cta-precio-nota">Precio especial de hoy · Envío gratis incluido</div>
     <div class="garantia-badge">
       🛡️ Pago contra entrega · 📦 Envío gratis · 💬 Atención por WhatsApp
     </div>
-    <a href="pedido.html" class="btn-compra" style="font-size:17px; padding:18px 24px;">
-      QUIERO EL SÉRUM AHORA — Q200
-      <small>Pagás al recibir · Guatex a toda Guatemala</small>
+    <a href="pedido.html" class="btn-compra">
+      Pide ahora · Paga en casa
+      <small>Pagás al recibir · Envío a toda Guatemala</small>
     </a>
     <div class="cta-garantias">
       <span>✓ Sin tarjeta</span>
@@ -1363,19 +2116,290 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 AlmaMaya Store · almamaya.store</p>
-  <p>Enviamos con Guatex a toda Guatemala</p>
+  <p>Enviamos a toda Guatemala · Envío gratis</p>
   <p style="margin-top:8px;">
     <a href="#">Política de privacidad</a> · <a href="#">Términos de compra</a>
   </p>
   <p style="margin-top:6px; font-size:11px; color:#444;">Resultados pueden variar. Producto cosmético de uso externo.</p>
 </footer>
 
-<!-- BOTÓN FLOTANTE -->
-<a href="pedido.html" class="btn-flotante">
-  🛒 Pedir ahora — Solo Q200
-</a>
+<!-- SOCIAL PROOF POPUP -->
+<div class="sp-popup" id="spPopup">
+  <div class="sp-avatar" id="spAvatar">A</div>
+  <div class="sp-texto">
+    <span class="sp-nombre" id="spNombre">Ana P. de Mixco</span>
+    <span class="sp-accion">acaba de pedir <strong>2 frascos</strong></span>
+    <span class="sp-tiempo" id="spTiempo">hace 4 minutos</span>
+  </div>
+</div>
 
-<script></script>
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-info">
+    <span class="sticky-bar-nombre">💧 Sérum Despigmentante</span>
+    <span class="sticky-bar-cta">Elimina manchas del embarazo · Q200</span>
+  </div>
+  <a href="pedido.html" class="sticky-bar-btn">Pedir ahora →</a>
+</div>
+
+
+<script>
+/* ── SHIPPING TRACKER ──
+   Cómo funciona:
+   Enviás al cliente un link con ?estado=1, ?estado=2 o ?estado=3
+   Ejemplo: index.html?estado=2
+   Estado 1 = Pedido recibido
+   Estado 2 = En camino
+   Estado 3 = Entregado
+*/
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var estado = parseInt(params.get('estado')) || 1;
+  if (estado < 1) estado = 1;
+  if (estado > 3) estado = 3;
+
+  var fill    = document.getElementById('stFill');
+  var circles = [
+    document.getElementById('stCircle1'),
+    document.getElementById('stCircle2'),
+    document.getElementById('stCircle3')
+  ];
+  var labels = [
+    document.getElementById('stLabel1'),
+    document.getElementById('stLabel2'),
+    document.getElementById('stLabel3')
+  ];
+  var sub3 = document.getElementById('stSub3');
+
+  var fillWidths = ['0%', '50%', '100%'];
+  fill.style.width = fillWidths[estado - 1];
+
+  var icons = ['✓', '🚚', '📦'];
+
+  circles.forEach(function (circle, i) {
+    var step = i + 1;
+    circle.classList.remove('pending', 'active', 'done');
+    labels[i].classList.remove('active-label', 'done-label');
+
+    if (step < estado) {
+      circle.classList.add('done');
+      circle.textContent = '✓';
+      labels[i].classList.add('done-label');
+    } else if (step === estado) {
+      circle.classList.add('active');
+      circle.textContent = icons[i];
+      labels[i].classList.add('active-label');
+    } else {
+      circle.classList.add('pending');
+      circle.textContent = icons[i];
+    }
+  });
+
+  if (estado === 3 && sub3) {
+    sub3.classList.add('highlight');
+    sub3.textContent = '¡Llegó!';
+  }
+})();
+
+/* ── COUNTDOWN URGENCIA ── */
+(function() {
+  var el = document.getElementById('urgTimer');
+  if (!el) return;
+  var MINS = 5;
+  function reset() { return MINS * 60; }
+  var secs = reset();
+  function tick() {
+    secs--;
+    if (secs < 0) secs = reset();
+    var m = Math.floor(secs / 60);
+    var s = secs % 60;
+    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  setInterval(tick, 1000);
+})();
+
+/* ── FAQ toggle ── */
+document.querySelectorAll('.faq-pregunta').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    item.classList.toggle('open');
+  });
+});
+
+/* ── SOCIAL PROOF POPUP ── */
+(function () {
+  var popup   = document.getElementById('spPopup');
+  var avatar  = document.getElementById('spAvatar');
+  var nombre  = document.getElementById('spNombre');
+  var tiempo  = document.getElementById('spTiempo');
+  if (!popup) return;
+
+  var compradores = [
+    { n: 'Ana P. de Mixco',           t: 'hace 4 minutos' },
+    { n: 'Carmen R. de Villa Nueva',  t: 'hace 7 minutos' },
+    { n: 'Lucía M. de Xela',          t: 'hace 12 minutos' },
+    { n: 'Rosa G. de Escuintla',      t: 'hace 2 minutos' },
+    { n: 'María F. de Guatemala',     t: 'hace 9 minutos' },
+    { n: 'Sofía H. de Cobán',         t: 'hace 15 minutos' },
+    { n: 'Patricia V. de Petén',      t: 'hace 6 minutos' },
+  ];
+  var idx = 0;
+  var mostrandoPopup = false;
+
+  function mostrar() {
+    if (mostrandoPopup) return;
+    mostrandoPopup = true;
+    var c = compradores[idx % compradores.length];
+    idx++;
+    avatar.textContent = c.n.charAt(0);
+    nombre.textContent = c.n;
+    tiempo.textContent = c.t;
+    popup.classList.add('show');
+    setTimeout(function () {
+      popup.classList.remove('show');
+      setTimeout(function () { mostrandoPopup = false; }, 500);
+    }, 2000);
+  }
+
+  var secciones = [
+    document.querySelector('.zona-producto'),
+    document.querySelector('.seccion-chats'),
+    document.querySelector('.seccion-porque'),
+    document.querySelector('.seccion-detalle'),
+  ];
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) mostrar();
+    });
+  }, { threshold: 0.2 });
+
+  secciones.forEach(function (s) { if (s) obs.observe(s); });
+})();
+
+/* ── STICKY BAR ── */
+(function () {
+  var bar    = document.getElementById('stickyBar');
+  var trigger = document.querySelector('.seccion-espejo');
+  if (!bar || !trigger) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        bar.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observer.observe(trigger);
+})();
+
+/* ── TESTI SLIDER ── */
+(function () {
+  var track = document.getElementById('testiTrack');
+  var dots  = document.querySelectorAll('#testiDots .testi-dot');
+  if (!track) return;
+
+  var total = dots.length, current = 0, timer;
+
+  function goTo(i) {
+    current = (i + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function (d, idx) { d.classList.toggle('active', idx === current); });
+  }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      clearInterval(timer);
+      goTo(parseInt(d.getAttribute('data-i')));
+      timer = setInterval(function () { goTo(current + 1); }, 5000);
+    });
+  });
+
+  timer = setInterval(function () { goTo(current + 1); }, 5000);
+})();
+
+/* ── BEFORE / AFTER SLIDER ── */
+(function () {
+  var slider    = document.getElementById('baSlider');
+  var afterWrap = document.getElementById('baAfterWrap');
+  var handle    = document.getElementById('baHandle');
+  if (!slider) return;
+
+  var dragging = false;
+
+  function setPos(x) {
+    var rect  = slider.getBoundingClientRect();
+    var pct   = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
+    var pcStr = (pct * 100).toFixed(1) + '%';
+    afterWrap.style.width = pcStr;
+    handle.style.left     = pcStr;
+  }
+
+  handle.addEventListener('mousedown',  function (e) { dragging = true; e.preventDefault(); });
+  slider.addEventListener('mousedown',  function (e) { dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove',  function (e) { if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup',    function ()  { dragging = false; });
+
+  handle.addEventListener('touchstart', function ()  { dragging = true; }, { passive: true });
+  slider.addEventListener('touchstart', function (e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchmove',  function (e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend',   function ()  { dragging = false; });
+
+  setTimeout(function () {
+    var rect = slider.getBoundingClientRect();
+    var cx   = rect.left + rect.width * 0.5;
+    setPos(cx + rect.width * 0.2);
+    setTimeout(function () { setPos(cx); }, 700);
+  }, 900);
+})();
+
+/* ── WA SLIDER ── */
+(function () {
+  var track  = document.getElementById('waTrack');
+  var dots   = document.querySelectorAll('#waDots .wa-dot');
+  if (!track) return;
+
+  var total   = dots.length;
+  var current = 0;
+  var timer;
+
+  function goTo(i) {
+    current = (i + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function (d, idx) {
+      d.classList.toggle('active', idx === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      clearInterval(timer);
+      goTo(parseInt(d.getAttribute('data-i')));
+      timer = setInterval(next, 4500);
+    });
+  });
+
+  timer = setInterval(next, 4500);
+})();
+
+/* ── SELECTOR DE CANTIDAD ── */
+document.querySelectorAll('.qty-option').forEach(function(opt) {
+  opt.addEventListener('click', function() {
+    var parent = opt.closest('.qty-selector');
+    parent.querySelectorAll('.qty-option').forEach(function(o) {
+      o.classList.remove('selected');
+    });
+    opt.classList.add('selected');
+    var qty   = opt.getAttribute('data-qty');
+    var price = opt.getAttribute('data-price');
+    var btn   = opt.closest('section') ? opt.closest('section').querySelector('.btn-compra') : document.getElementById('btnCompraZona2');
+    if (btn) btn.href = 'pedido.html?qty=' + qty + '&precio=' + price;
+  });
+});
+</script>
 
 </body>
 </html>

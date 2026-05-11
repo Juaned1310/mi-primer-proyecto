@@ -396,16 +396,52 @@
       font-size: 15px;
       margin-bottom: 40px;
     }
-    .ad-imagen {
-      max-width: 600px;
+    .ad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 760px;
       margin: 0 auto 40px;
+    }
+    .ad-col {
+      position: relative;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,.5);
     }
-    .ad-imagen img {
+    .ad-col img {
       width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center top;
       display: block;
+    }
+    .ad-etiqueta {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ad-etiqueta.antes {
+      background: rgba(0,0,0,.7);
+      color: #FF6B6B;
+      border: 1.5px solid #FF6B6B;
+    }
+    .ad-etiqueta.despues {
+      background: rgba(0,0,0,.7);
+      color: #68d391;
+      border: 1.5px solid #68d391;
+    }
+    @media (max-width: 640px) {
+      .ad-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .ad-col img { height: 260px; }
     }
 
     /* ══════════════════════
@@ -626,7 +662,7 @@
      1. HERO / HOOK
 ═══════════════════════════════ -->
 <section class="hero">
-  <img class="hero-bg" src="imagenes/serum8.jpg" alt="" />
+  <img class="hero-bg" src="imagenes/hook-antes.jpg" alt="" />
   <div class="hero-overlay"></div>
   <div class="hero-text">
 
@@ -762,8 +798,8 @@
 ═══════════════════════════════ -->
 <section class="producto-visual">
   <div class="pv-img">
-    <img src="imagenes/serum5.jpg" alt="Ingredientes naturales del sérum" />
-    <div class="pv-label">Ingredientes 100% Naturales</div>
+    <img src="imagenes/serum1.jpg" alt="Sérum Despigmentante kit completo" />
+    <div class="pv-label">Tu kit completo — Frasco 50ml</div>
   </div>
   <div class="pv-img">
     <img src="imagenes/serum7.jpg" alt="Aplicación del sérum" />
@@ -776,11 +812,18 @@
 ═══════════════════════════════ -->
 <section class="antes-despues">
   <h2>Esto pasa en <em>7 días.</em></h2>
-  <p class="sub">Resultados reales de nuestras clientas · Sin filtros · Sin photoshop</p>
-  <div class="ad-imagen">
-    <img src="imagenes/serum3.jpg" alt="Antes y después del sérum despigmentante" />
+  <p class="sub">La diferencia que sienten nuestras clientas — por dentro y por fuera</p>
+  <div class="ad-grid">
+    <div class="ad-col">
+      <img src="imagenes/hook-antes.jpg" alt="Antes del sérum" />
+      <div class="ad-etiqueta antes">✗ Antes</div>
+    </div>
+    <div class="ad-col">
+      <img src="imagenes/hook-despues.jpg" alt="Después del sérum" />
+      <div class="ad-etiqueta despues">✓ Después</div>
+    </div>
   </div>
-  <a href="#ordenar" class="btn">QUIERO ESTOS RESULTADOS — PAGO AL RECIBIR</a>
+  <a href="#ordenar" class="btn">QUIERO ESTE CAMBIO — PAGO AL RECIBIR</a>
 </section>
 
 <!-- ═══════════════════════════════
@@ -867,7 +910,7 @@
      10. CTA FINAL
 ═══════════════════════════════ -->
 <section class="cta-final" id="ordenar">
-  <img class="cta-bg" src="imagenes/serum4.jpg" alt="" />
+  <img class="cta-bg" src="imagenes/hook-despues.jpg" alt="" />
   <div class="cta-overlay"></div>
   <div class="cta-content">
     <h2>Es tu turno de <em>sentirte libre</em> en tu propia piel.</h2>
