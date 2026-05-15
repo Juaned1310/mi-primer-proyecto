@@ -3,789 +3,347 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dark Knuckle Whitening Serum — Aclara en 7 días</title>
+  <title>Dark Knuckle Whitening Serum — Aclara Manos, Codos y Pecho en 7 días</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Georgia', serif;
-      background: #fff;
-      color: #1a1a1a;
-      overflow-x: hidden;
-    }
-
+    body { font-family: 'Georgia', serif; background: #fff; color: #1a1a1a; overflow-x: hidden; }
     .container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
-    .text-center { text-align: center; }
 
-    /* ── BARRA SUPERIOR ── */
+    /* BARRA SUPERIOR */
     .topbar {
-      background: #1c1c2e;
-      color: #a78bfa;
-      padding: 10px 0;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-transform: uppercase;
+      background: #1c1c2e; color: #a78bfa; padding: 10px 0;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.8px;
+      overflow: hidden; white-space: nowrap; text-transform: uppercase;
     }
-    .topbar-track {
-      display: inline-block;
-      animation: scroll-left 24s linear infinite;
-    }
-    .topbar-track span {
-      display: inline-block;
-      padding: 0 48px;
-    }
-    @keyframes scroll-left {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    .topbar-track { display: inline-block; animation: scroll-left 24s linear infinite; }
+    .topbar-track span { display: inline-block; padding: 0 48px; }
+    @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* ══ 1. HERO ══ */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 580px;
-      display: flex;
-      align-items: flex-end;
-      background: #1c1c2e;
-    }
-    .hero-split {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
-    .hero-split-left {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-split-right {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-split-left img,
-    .hero-split-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .hero-split-divider {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #fff;
-      z-index: 3;
-      transform: translateX(-50%);
-    }
-    .hero-split-label-left {
-      position: absolute;
-      bottom: 12px;
-      left: 8px;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      font-size: 10px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .hero-split-label-right {
-      position: absolute;
-      bottom: 12px;
-      right: 8px;
-      background: rgba(109,40,217,0.85);
-      color: #fff;
-      font-size: 10px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top,
-        rgba(28,28,46,0.97) 0%,
-        rgba(28,28,46,0.82) 28%,
-        rgba(28,28,46,0.10) 58%,
-        rgba(28,28,46,0.0) 100%);
-      z-index: 2;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 4;
-      padding: 36px 24px 48px;
-      width: 100%;
-      text-align: center;
-    }
-    .hero-tag {
-      display: inline-block;
-      background: #7c3aed;
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 20px;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .hero-titulo {
-      font-size: 27px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-    .hero-titulo span { color: #c4b5fd; }
-    .hero-subtitulo {
-      font-size: 15px;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-
+    /* BOTÓN */
     @keyframes btnWiggle {
       0%,100% { transform: rotate(0deg) translateY(0); }
-      15%      { transform: rotate(-1.5deg) translateY(-1px); }
-      30%      { transform: rotate(1.5deg) translateY(1px); }
-      45%      { transform: rotate(-1deg) translateY(0); }
-      60%      { transform: rotate(1deg) translateY(-1px); }
-      75%      { transform: rotate(0deg) translateY(0); }
+      15% { transform: rotate(-1.5deg) translateY(-1px); }
+      30% { transform: rotate(1.5deg) translateY(1px); }
+      45% { transform: rotate(-1deg) translateY(0); }
+      60% { transform: rotate(1deg) translateY(-1px); }
+      75% { transform: rotate(0deg) translateY(0); }
     }
     .btn-compra {
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-      background: #7c3aed;
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 15px 18px;
-      border-radius: 10px;
-      letter-spacing: 0.3px;
-      border: none;
-      cursor: pointer;
-      font-family: 'Segoe UI', sans-serif;
-      animation: btnWiggle 3s ease-in-out infinite;
-      text-align: center;
+      display: block; width: 100%; max-width: 300px;
+      margin-left: auto; margin-right: auto;
+      background: #7c3aed; color: #fff; text-decoration: none;
+      font-size: 15px; font-weight: 700; padding: 15px 18px;
+      border-radius: 10px; letter-spacing: 0.3px; border: none;
+      cursor: pointer; font-family: 'Segoe UI', sans-serif;
+      animation: btnWiggle 3s ease-in-out infinite; text-align: center;
     }
     .btn-compra:hover { background: #6d28d9; }
-    .btn-compra small {
-      display: block;
-      font-size: 11px;
-      font-weight: 400;
-      margin-top: 4px;
-      opacity: 0.85;
+    .btn-compra small { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; opacity: 0.85; }
+
+    /* ══ SECCIÓN 1: HOOK ══ */
+    .hook {
+      position: relative; width: 100%; min-height: 560px;
+      display: flex; align-items: flex-end; background: #1c1c2e;
     }
-    .hero-garantias {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 16px;
-      flex-wrap: wrap;
+    .hook-split { position: absolute; inset: 0; display: flex; width: 100%; height: 100%; }
+    .hook-split-left, .hook-split-right { flex: 1; overflow: hidden; position: relative; }
+    .hook-split-left img, .hook-split-right img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
     }
-    .hero-garantias span {
-      color: rgba(255,255,255,0.55);
-      font-size: 11px;
+    .hook-split-divider {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 3px; background: #fff; z-index: 3; transform: translateX(-50%);
+    }
+    .hook-label-left {
+      position: absolute; bottom: 12px; left: 8px;
+      background: rgba(0,0,0,0.7); color: #fff; font-size: 10px;
+      font-family: 'Segoe UI', sans-serif; font-weight: 700;
+      padding: 4px 8px; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .hook-label-right {
+      position: absolute; bottom: 12px; right: 8px;
+      background: rgba(109,40,217,0.85); color: #fff; font-size: 10px;
+      font-family: 'Segoe UI', sans-serif; font-weight: 700;
+      padding: 4px 8px; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .hook-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(28,28,46,0.97) 0%, rgba(28,28,46,0.82) 28%,
+        rgba(28,28,46,0.10) 58%, rgba(28,28,46,0.0) 100%);
+      z-index: 2;
+    }
+    .hook-content {
+      position: relative; z-index: 4;
+      padding: 36px 24px 48px; width: 100%; text-align: center;
+    }
+    .hook-tag {
+      display: inline-block; background: #7c3aed; color: #fff;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px; margin-bottom: 18px;
       font-family: 'Segoe UI', sans-serif;
     }
+    .hook-titulo { font-size: 26px; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 14px; }
+    .hook-titulo span { color: #c4b5fd; }
+    .hook-subtitulo { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 26px; }
+    .hook-garantias { display: flex; justify-content: center; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+    .hook-garantias span { color: rgba(255,255,255,0.55); font-size: 11px; font-family: 'Segoe UI', sans-serif; }
 
-    /* ══ 2. ZONA PRODUCTO ══ */
+    /* ZONA PRODUCTO (dentro de sección 1) */
     .zona-producto {
-      background: #fff;
-      padding: 44px 24px 36px;
-      text-align: center;
-      border-bottom: 1px solid #ede9fe;
+      background: #fff; padding: 40px 24px 36px;
+      text-align: center; border-bottom: 1px solid #ede9fe;
     }
     .producto-img-wrap {
-      width: 260px;
-      height: 260px;
-      margin: 0 auto 24px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid #ddd6fe;
-      box-shadow: 0 8px 32px rgba(124,58,237,0.15);
+      width: 240px; height: 240px; margin: 0 auto 20px;
+      border-radius: 18px; overflow: hidden;
+      border: 2px solid #ddd6fe; box-shadow: 0 8px 32px rgba(124,58,237,0.15);
     }
     .producto-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-    .producto-nombre {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
+    .producto-nombre { font-size: 21px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
     .producto-subtitulo {
-      font-size: 12px;
-      color: #999;
-      margin-bottom: 14px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-family: 'Segoe UI', sans-serif;
+      font-size: 11px; color: #999; margin-bottom: 12px;
+      letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Segoe UI', sans-serif;
     }
-    .estrellas { color: #f5a623; font-size: 20px; margin-bottom: 6px; }
+    .estrellas { color: #f5a623; font-size: 20px; margin-bottom: 4px; }
     .resena-texto {
-      font-size: 13px;
-      color: #555;
-      font-style: italic;
-      margin-bottom: 4px;
-      line-height: 1.5;
-      font-family: 'Segoe UI', sans-serif;
+      font-size: 13px; color: #555; font-style: italic;
+      margin-bottom: 4px; line-height: 1.5; font-family: 'Segoe UI', sans-serif;
     }
-    .resena-autor {
-      font-size: 12px;
-      color: #aaa;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    .resena-autor { font-size: 12px; color: #aaa; margin-bottom: 16px; font-family: 'Segoe UI', sans-serif; }
     .envio-badge {
-      display: inline-block;
-      background: #e8f5e9;
-      color: #2e7d32;
-      border: 1px solid #a5d6a7;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 22px;
-      font-family: 'Segoe UI', sans-serif;
+      display: inline-block; background: #e8f5e9; color: #2e7d32;
+      border: 1px solid #a5d6a7; padding: 6px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 700; margin-bottom: 20px; font-family: 'Segoe UI', sans-serif;
     }
-    .producto-bullets {
-      list-style: none;
-      text-align: left;
-      max-width: 300px;
-      margin: 0 auto 28px;
-    }
+    .producto-bullets { list-style: none; text-align: left; max-width: 300px; margin: 0 auto 26px; }
     .producto-bullets li {
-      font-size: 14px;
-      color: #444;
-      padding: 10px 0;
-      padding-left: 26px;
-      position: relative;
-      border-bottom: 1px solid #f0ebff;
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.4;
+      font-size: 14px; color: #444; padding: 10px 0; padding-left: 26px;
+      position: relative; border-bottom: 1px solid #f0ebff;
+      font-family: 'Segoe UI', sans-serif; line-height: 1.4;
     }
     .producto-bullets li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #7c3aed;
-      font-weight: 900;
-      font-size: 15px;
+      content: "✓"; position: absolute; left: 0;
+      color: #7c3aed; font-weight: 900; font-size: 15px;
     }
 
-    /* ══ 3. PROBLEMA ══ */
+    /* ══ SECCIÓN 2: WHATSAPP / VERIFICACIÓN SOCIAL ══ */
+    .seccion-whatsapp { background: #f5f3ff; padding: 48px 24px 44px; text-align: center; }
+    .wa-tag {
+      display: inline-block; background: #dcfce7; color: #15803d;
+      border: 1px solid #86efac; font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 10px; font-family: 'Segoe UI', sans-serif; font-weight: 700;
+    }
+    .wa-titulo { font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 28px; }
+    .wa-titulo span { color: #7c3aed; }
+    .wa-chats { display: flex; flex-direction: column; gap: 16px; max-width: 380px; margin: 0 auto; }
+    .wa-chat { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; text-align: left; }
+    .wa-chat-header { background: #075e54; display: flex; align-items: center; gap: 10px; padding: 10px 14px; }
+    .wa-avatar {
+      width: 36px; height: 36px; border-radius: 50%; background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: #fff; font-family: 'Segoe UI', sans-serif; flex-shrink: 0;
+    }
+    .wa-nombre { font-size: 13px; font-weight: 700; color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .wa-estado { font-size: 11px; color: rgba(255,255,255,0.65); font-family: 'Segoe UI', sans-serif; }
+    .wa-body { background: #ece5dd; padding: 14px; }
+    .wa-burbuja {
+      background: #dcf8c6; border-radius: 8px 8px 2px 8px;
+      padding: 10px 12px; font-size: 13px; color: #1a1a1a;
+      line-height: 1.5; font-family: 'Segoe UI', sans-serif;
+      max-width: 280px; margin-left: auto;
+    }
+    .wa-hora { font-size: 10px; color: #888; text-align: right; margin-top: 4px; font-family: 'Segoe UI', sans-serif; }
+    .wa-verificado {
+      font-size: 11px; color: #15803d; text-align: center;
+      font-family: 'Segoe UI', sans-serif; font-weight: 600; padding: 8px; background: #fff;
+    }
+
+    /* ══ SECCIÓN 3: DOLOR / PROBLEMA ══ */
     .seccion-problema {
-      position: relative;
-      width: 100%;
-      min-height: 520px;
-      display: flex;
-      align-items: flex-end;
-      background: #1c1c2e;
+      position: relative; width: 100%; min-height: 520px;
+      display: flex; align-items: flex-end; background: #1c1c2e;
     }
     .seccion-problema img.bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
     }
     .problema-overlay {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: linear-gradient(to top,
-        rgba(28,28,46,0.97) 0%,
-        rgba(28,28,46,0.88) 38%,
-        rgba(28,28,46,0.25) 70%,
-        rgba(28,28,46,0.0) 100%);
+        rgba(28,28,46,0.97) 0%, rgba(28,28,46,0.88) 38%,
+        rgba(28,28,46,0.25) 70%, rgba(28,28,46,0.0) 100%);
     }
-    .problema-content {
-      position: relative;
-      z-index: 2;
-      padding: 36px 24px 44px;
-      width: 100%;
-      text-align: center;
-    }
+    .problema-content { position: relative; z-index: 2; padding: 36px 24px 44px; width: 100%; text-align: center; }
     .problema-tag {
-      display: inline-block;
-      background: rgba(124,58,237,0.3);
-      border: 1px solid #7c3aed;
-      color: #c4b5fd;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
+      display: inline-block; background: rgba(124,58,237,0.3);
+      border: 1px solid #7c3aed; color: #c4b5fd; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 18px; font-family: 'Segoe UI', sans-serif;
     }
-    .problema-titulo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 16px;
-    }
+    .problema-titulo { font-size: 24px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 16px; }
     .problema-titulo span { color: #c4b5fd; }
-    .problema-texto {
-      font-size: 15px;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.7;
-      max-width: 380px;
-      margin: 0 auto;
-    }
+    .problema-texto { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 380px; margin: 0 auto; }
 
-    /* ══ VIDEO ══ */
-    .seccion-video {
-      background: #1c1c2e;
-      padding: 0;
-    }
-    .seccion-video video {
-      width: 100%;
-      display: block;
-      max-height: 600px;
-      object-fit: cover;
-    }
-    .video-caption {
-      background: #1c1c2e;
-      text-align: center;
-      padding: 16px 20px 24px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* ══ 4. SOLUCIÓN ══ */
-    .seccion-solucion {
-      background: #f5f3ff;
-      padding: 52px 24px 44px;
-      text-align: center;
-    }
+    /* ══ SECCIÓN 4: SOLUCIÓN ══ */
+    .seccion-solucion { background: #f5f3ff; padding: 52px 24px 44px; text-align: center; }
     .solucion-tag {
-      display: inline-block;
-      background: #ede9fe;
-      color: #7c3aed;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
+      display: inline-block; background: #ede9fe; color: #7c3aed;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif; font-weight: 700;
     }
-    .solucion-titulo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      line-height: 1.3;
-      margin-bottom: 16px;
-    }
+    .solucion-titulo { font-size: 24px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 16px; }
     .solucion-titulo span { color: #7c3aed; }
     .solucion-texto {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 28px;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 28px;
+      max-width: 360px; margin-left: auto; margin-right: auto;
     }
     .solucion-img {
-      width: 100%;
-      max-width: 380px;
-      height: 320px;
-      border-radius: 16px;
-      overflow: hidden;
-      margin: 0 auto 28px;
-      box-shadow: 0 8px 32px rgba(124,58,237,0.18);
+      width: 100%; max-width: 380px; height: 320px; border-radius: 16px;
+      overflow: hidden; margin: 0 auto 28px; box-shadow: 0 8px 32px rgba(124,58,237,0.18);
     }
     .solucion-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-    /* ══ 5. INGREDIENTES ══ */
-    .seccion-ingredientes {
-      background: #1c1c2e;
-      padding: 52px 24px 44px;
-      text-align: center;
+    /* ══ SECCIÓN 5: PRODUCTO (INGREDIENTES / MODO USO / INVIMA) ══ */
+    .seccion-producto { background: #1c1c2e; padding: 52px 24px 44px; text-align: center; }
+    .prod-tag {
+      display: inline-block; background: rgba(124,58,237,0.2);
+      border: 1px solid #7c3aed; color: #c4b5fd; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 20px; font-family: 'Segoe UI', sans-serif;
     }
-    .ing-tag {
-      display: inline-block;
-      background: rgba(124,58,237,0.2);
-      border: 1px solid #7c3aed;
-      color: #c4b5fd;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      font-family: 'Segoe UI', sans-serif;
+    .prod-titulo { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 6px; }
+    .prod-titulo span { color: #c4b5fd; }
+    .prod-subtitulo { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 28px; font-family: 'Segoe UI', sans-serif; }
+    .prod-img-wrap {
+      width: 200px; height: 200px; margin: 0 auto 28px;
+      border-radius: 16px; overflow: hidden;
+      border: 2px solid rgba(124,58,237,0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     }
-    .ing-titulo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-    .ing-titulo span { color: #c4b5fd; }
-    .ing-subtitulo {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 32px;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .ing-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 360px;
-      margin: 0 auto 32px;
-    }
+    .prod-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .ing-cards { display: flex; flex-direction: column; gap: 14px; max-width: 360px; margin: 0 auto 28px; }
     .ing-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(124,58,237,0.3);
-      border-radius: 12px;
-      padding: 16px 18px;
-      text-align: left;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 12px; padding: 16px 18px; text-align: left;
+      display: flex; align-items: flex-start; gap: 14px;
     }
-    .ing-icon {
-      font-size: 28px;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .ing-nombre {
-      font-size: 15px;
-      font-weight: 700;
-      color: #c4b5fd;
-      margin-bottom: 4px;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .ing-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.5;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    .ing-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+    .ing-nombre { font-size: 15px; font-weight: 700; color: #c4b5fd; margin-bottom: 4px; font-family: 'Segoe UI', sans-serif; }
+    .ing-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; font-family: 'Segoe UI', sans-serif; }
     .ing-uso {
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.4);
-      border-radius: 12px;
-      padding: 18px 20px;
-      max-width: 360px;
-      margin: 0 auto 28px;
-      text-align: left;
+      background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4);
+      border-radius: 12px; padding: 18px 20px; max-width: 360px;
+      margin: 0 auto 20px; text-align: left;
     }
     .ing-uso-titulo {
-      font-size: 13px;
-      font-weight: 700;
-      color: #c4b5fd;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      font-family: 'Segoe UI', sans-serif;
+      font-size: 13px; font-weight: 700; color: #c4b5fd;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-family: 'Segoe UI', sans-serif;
     }
-    .ing-uso-pasos {
-      list-style: none;
-    }
+    .ing-uso-pasos { list-style: none; }
     .ing-uso-pasos li {
-      font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      font-family: 'Segoe UI', sans-serif;
-      padding: 6px 0;
-      padding-left: 20px;
-      position: relative;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      line-height: 1.4;
+      font-size: 13px; color: rgba(255,255,255,0.75); font-family: 'Segoe UI', sans-serif;
+      padding: 6px 0; padding-left: 20px; position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.4;
     }
     .ing-uso-pasos li:last-child { border-bottom: none; }
-    .ing-uso-pasos li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: #c4b5fd;
-    }
-    .ing-certificacion {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      font-family: 'Segoe UI', sans-serif;
-      margin-top: 8px;
+    .ing-uso-pasos li::before { content: "→"; position: absolute; left: 0; color: #c4b5fd; }
+    .invima-badge {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 12px; color: rgba(255,255,255,0.5); font-family: 'Segoe UI', sans-serif; margin-bottom: 28px;
     }
 
-    /* ══ 6. TABLA COMPARATIVA ══ */
-    .seccion-tabla {
-      background: #fff;
-      padding: 52px 24px 44px;
-      text-align: center;
-    }
+    /* ══ SECCIÓN 6: POR QUÉ SOMOS LOS MEJORES ══ */
+    .seccion-tabla { background: #fff; padding: 52px 24px 44px; text-align: center; }
     .tabla-tag {
-      display: inline-block;
-      background: #ede9fe;
-      color: #7c3aed;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
+      display: inline-block; background: #ede9fe; color: #7c3aed;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif; font-weight: 700;
     }
-    .tabla-titulo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a1a1a;
-      line-height: 1.3;
-      margin-bottom: 28px;
-    }
+    .tabla-titulo { font-size: 22px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 28px; }
     .tabla-titulo span { color: #7c3aed; }
     .tabla-comparativa {
-      width: 100%;
-      max-width: 420px;
-      margin: 0 auto 28px;
-      border-collapse: collapse;
-      border-radius: 14px;
-      overflow: hidden;
+      width: 100%; max-width: 420px; margin: 0 auto 28px;
+      border-collapse: collapse; border-radius: 14px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(124,58,237,0.1);
     }
-    .tabla-comparativa thead tr {
-      background: #1c1c2e;
-      color: #fff;
-    }
+    .tabla-comparativa thead tr { background: #1c1c2e; color: #fff; }
     .tabla-comparativa thead th {
-      padding: 14px 10px;
-      font-size: 13px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 0.3px;
+      padding: 14px 10px; font-size: 13px; font-family: 'Segoe UI', sans-serif;
+      font-weight: 700; text-align: center; letter-spacing: 0.3px;
     }
     .tabla-comparativa thead th:first-child { text-align: left; padding-left: 16px; }
-    .tabla-comparativa thead th.col-nuestro {
-      background: #7c3aed;
-      color: #fff;
-    }
+    .tabla-comparativa thead th.col-nuestro { background: #7c3aed; color: #fff; }
     .tabla-comparativa tbody tr:nth-child(odd) { background: #f8f6ff; }
     .tabla-comparativa tbody tr:nth-child(even) { background: #fff; }
     .tabla-comparativa tbody td {
-      padding: 13px 10px;
-      font-size: 13px;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      color: #444;
-      border-bottom: 1px solid #ede9fe;
+      padding: 13px 10px; font-size: 13px; font-family: 'Segoe UI', sans-serif;
+      text-align: center; color: #444; border-bottom: 1px solid #ede9fe;
     }
     .tabla-comparativa tbody td:first-child {
-      text-align: left;
-      padding-left: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-      font-size: 12px;
+      text-align: left; padding-left: 16px; font-weight: 600; color: #1a1a1a; font-size: 12px;
     }
-    .tabla-comparativa tbody td.col-nuestro {
-      background: rgba(124,58,237,0.07);
-      font-weight: 700;
-      color: #5b21b6;
-    }
+    .tabla-comparativa tbody td.col-nuestro { background: rgba(124,58,237,0.07); font-weight: 700; color: #5b21b6; }
     .check-si { color: #16a34a; font-weight: 700; }
     .check-no { color: #dc2626; }
 
-    /* ══ 7. ANTES / DESPUÉS ══ */
-    .seccion-antes-despues {
-      background: #f5f3ff;
-      padding: 52px 24px 44px;
-      text-align: center;
-    }
+    /* ══ SECCIÓN 7: ANTES Y DESPUÉS ══ */
+    .seccion-antes-despues { background: #f5f3ff; padding: 52px 24px 44px; text-align: center; }
     .ad-tag {
-      display: inline-block;
-      background: #ede9fe;
-      color: #7c3aed;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 18px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
+      display: inline-block; background: #ede9fe; color: #7c3aed;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif; font-weight: 700;
     }
-    .ad-titulo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a1a1a;
-      line-height: 1.3;
-      margin-bottom: 28px;
-    }
+    .ad-titulo { font-size: 22px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 28px; }
     .ad-titulo span { color: #7c3aed; }
-    .ad-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      max-width: 380px;
-      margin: 0 auto 36px;
-    }
-    .ad-foto {
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-    .ad-foto img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+    .ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 380px; margin: 0 auto 36px; }
+    .ad-foto { border-radius: 12px; overflow: hidden; position: relative; }
+    .ad-foto img { width: 100%; height: 200px; object-fit: cover; }
     .ad-foto-label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 8px;
+      font-size: 11px; font-weight: 700; font-family: 'Segoe UI', sans-serif;
+      text-align: center; text-transform: uppercase; letter-spacing: 0.5px;
     }
-    .ad-foto-label.antes {
-      background: rgba(220,38,38,0.85);
-      color: #fff;
-    }
-    .ad-foto-label.despues {
-      background: rgba(22,163,74,0.85);
-      color: #fff;
-    }
+    .ad-foto-label.antes { background: rgba(220,38,38,0.85); color: #fff; }
+    .ad-foto-label.despues { background: rgba(22,163,74,0.85); color: #fff; }
 
-    /* ══ FAQ ══ */
-    .faq-lista {
-      max-width: 420px;
-      margin: 0 auto 36px;
-      text-align: left;
+    /* ══ SECCIÓN 8: FAQ ══ */
+    .seccion-faq { background: #1c1c2e; padding: 52px 24px 60px; text-align: center; }
+    .faq-tag {
+      display: inline-block; background: rgba(124,58,237,0.3);
+      border: 1px solid #7c3aed; color: #c4b5fd; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 10px; font-family: 'Segoe UI', sans-serif;
     }
-    .faq-item {
-      border-bottom: 1px solid #ddd6fe;
-      padding: 18px 0;
-    }
+    .faq-titulo { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 28px; }
+    .faq-lista { max-width: 420px; margin: 0 auto 36px; text-align: left; }
+    .faq-item { border-bottom: 1px solid rgba(124,58,237,0.3); padding: 18px 0; }
     .faq-pregunta {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+      font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px;
+      font-family: 'Segoe UI', sans-serif; display: flex; align-items: flex-start; gap: 8px;
     }
     .faq-pregunta::before {
-      content: "Q";
-      background: #7c3aed;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 900;
-      padding: 2px 6px;
-      border-radius: 4px;
-      flex-shrink: 0;
-      margin-top: 1px;
+      content: "Q"; background: #7c3aed; color: #fff; font-size: 10px;
+      font-weight: 900; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;
     }
     .faq-respuesta {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.6;
-      font-family: 'Segoe UI', sans-serif;
-      padding-left: 26px;
+      font-size: 13px; color: rgba(255,255,255,0.65);
+      line-height: 1.6; font-family: 'Segoe UI', sans-serif; padding-left: 26px;
     }
-
-    /* ══ CTA FINAL ══ */
-    .seccion-cta {
-      background: #1c1c2e;
-      padding: 52px 24px 60px;
-      text-align: center;
-    }
-    .cta-titulo {
-      font-size: 26px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
-    .cta-titulo span { color: #c4b5fd; }
-    .cta-texto {
-      font-size: 15px;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.6;
-      margin-bottom: 28px;
-      max-width: 340px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-garantias {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 300px;
-      margin: 24px auto 0;
-    }
+    .cta-garantias { display: flex; flex-direction: column; gap: 10px; max-width: 300px; margin: 24px auto 0; }
     .cta-garantia-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      font-family: 'Segoe UI', sans-serif;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: rgba(255,255,255,0.6); font-family: 'Segoe UI', sans-serif;
     }
     .cta-garantia-item span:first-child { font-size: 18px; }
 
-    /* ══ FOOTER ══ */
-    footer {
-      background: #111118;
-      padding: 28px 24px;
-      text-align: center;
-    }
-    footer p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.3);
-      font-family: 'Segoe UI', sans-serif;
-      margin-bottom: 6px;
-    }
-    footer a {
-      color: rgba(196,181,253,0.5);
-      text-decoration: none;
-    }
-
-    /* ══ URGENCIA ══ */
-    .urgencia-bar {
-      background: #7c3aed;
-      color: #fff;
-      text-align: center;
-      padding: 14px 20px;
-      font-size: 13px;
-      font-family: 'Segoe UI', sans-serif;
-      font-weight: 700;
-    }
-    .urgencia-bar span { opacity: 0.8; font-weight: 400; }
+    /* FOOTER */
+    footer { background: #111118; padding: 28px 24px; text-align: center; }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.3); font-family: 'Segoe UI', sans-serif; margin-bottom: 6px; }
+    footer a { color: rgba(196,181,253,0.5); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -804,141 +362,220 @@
   </div>
 </div>
 
-<!-- 1. HERO / HOOK -->
-<section class="hero">
-  <div class="hero-split">
-    <div class="hero-split-left">
-      <!-- IMAGEN IZQUIERDA: Volante de carro con nudillos oscurecidos bajo el sol -->
-      <img src="imagenes/hook-mujer-carro.jpg" alt="Nudillos oscuros por el sol" />
-      <div class="hero-split-label-left">Antes</div>
+<!-- ══════════════════════════════════
+     SECCIÓN 1: HOOK + ZONA PRODUCTO
+     Imagen hook: split antes/después manos, codos, pecho
+     MIDJOURNEY → guardar como: imagenes/hook-nueva.jpg
+     "Emotional split image, left: close-up dark hyperpigmented knuckles elbow and darkened chest of a guatemalan latina woman, harsh tropical sunlight, raw real, right: same woman smooth radiant even-toned skin on hands elbow and chest neckline, warm beauty light, transformation, 4:5 ratio, photorealistic cinematic"
+     ══════════════════════════════════ -->
+<section>
+
+  <div class="hook">
+    <div class="hook-split">
+      <div class="hook-split-left">
+        <img src="imagenes/hook-mujer-carro.jpg" alt="Manos oscuras antes del sérum" />
+        <div class="hook-label-left">Antes</div>
+      </div>
+      <div class="hook-split-right">
+        <img src="imagenes/cta-mujer-blazer.png" alt="Manos radiantes después del sérum" />
+        <div class="hook-label-right">7 días después</div>
+      </div>
+      <div class="hook-split-divider"></div>
     </div>
-    <div class="hero-split-right">
-      <!-- IMAGEN DERECHA: Manos radiantes sosteniendo el frasco del sérum -->
-      <img src="imagenes/cta-mujer-blazer.png" alt="Manos radiantes con sérum" />
-      <div class="hero-split-label-right">7 días después</div>
+    <div class="hook-overlay"></div>
+    <div class="hook-content">
+      <div class="hook-tag">Para mujeres que trabajan bajo el sol</div>
+      <h1 class="hook-titulo">
+        ¿El sol oscureció tus<br>
+        <span>manos, codos y pecho?</span><br>
+        Aclara en 7 días.
+      </h1>
+      <p class="hook-subtitulo">
+        No es descuido ni suciedad — es el daño del sol tropical.<br>
+        Miles de mujeres guatemaltecas ya lo están corrigiendo.
+      </p>
+      <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
+        ¡Quiero aclarar mi piel ahora!
+        <small>🚚 Envío gratis · Pago contra entrega</small>
+      </a>
+      <div class="hook-garantias">
+        <span>✓ Sin riesgo</span>
+        <span>✓ Pago al recibir</span>
+        <span>✓ 24-48 hrs</span>
+      </div>
     </div>
-    <div class="hero-split-divider"></div>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Nuevo · Lanzamiento Guatemala</div>
-    <h1 class="hero-titulo">
-      ¿Tus manos delatan el<br>
-      <span>tráfico de la ciudad?</span><br>
-      Recupera tu imagen hoy.
-    </h1>
-    <p class="hero-subtitulo">
-      El primer sérum diseñado para el sol intenso<br>de Guatemala. Aclara nudillos, codos y rodillas<br>en solo 7 días.
-    </p>
+
+  <div class="zona-producto">
+    <div class="producto-img-wrap">
+      <img src="../generador-imagenes/bottle_no_bg.png" alt="Dark Knuckle Whitening Serum" />
+    </div>
+    <p class="producto-subtitulo">Sérum Profesional · Neomentes</p>
+    <h2 class="producto-nombre">Dark Knuckle Whitening Serum</h2>
+    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+    <p class="resena-texto">"Por fin puedo extender la mano sin vergüenza"</p>
+    <p class="resena-autor">— Rosa M., vendedora, Guatemala City</p>
+    <div class="envio-badge">🚚 ENVÍO GRATIS A TODA GUATEMALA</div>
+    <ul class="producto-bullets">
+      <li>Aclara nudillos, codos y pecho en solo 7 días</li>
+      <li>Fórmula especial para el sol tropical de Guatemala</li>
+      <li>Absorción rápida, no grasa, fácil de aplicar</li>
+      <li>Pago contra entrega — pagás cuando lo recibís</li>
+    </ul>
     <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
-      ¡Quiero mis manos impecables!
-      <small>🚚 Envío gratis · Pago contra entrega</small>
+      Pedir con Envío Gratis
+      <small>Pago al recibir · Sin tarjeta de crédito</small>
     </a>
-    <div class="hero-garantias">
-      <span>✓ Sin riesgo</span>
-      <span>✓ Pago al recibir</span>
-      <span>✓ 24-48 hrs</span>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════
+     SECCIÓN 2: VERIFICACIÓN SOCIAL / WHATSAPP
+     (Burbujas de chat — no necesita imagen Midjourney)
+     ══════════════════════════════════ -->
+<section class="seccion-whatsapp">
+  <div class="wa-tag">✅ Clientes reales de Guatemala</div>
+  <h2 class="wa-titulo">Lo que dicen las que<br><span>ya lo probaron</span></h2>
+
+  <div class="wa-chats">
+
+    <div class="wa-chat">
+      <div class="wa-chat-header">
+        <div class="wa-avatar">R</div>
+        <div>
+          <div class="wa-nombre">Rosa M.</div>
+          <div class="wa-estado">Guatemala City</div>
+        </div>
+      </div>
+      <div class="wa-body">
+        <div class="wa-burbuja">
+          Llevo 2 semanas usándolo en los nudillos y codos. Ya se ve la diferencia, estoy impresionada 😭 Lo recomendé a mi hermana también 🙌
+          <div class="wa-hora">✓✓ 10:24 a.m.</div>
+        </div>
+      </div>
+      <div class="wa-verificado">✅ Compra verificada</div>
     </div>
+
+    <div class="wa-chat">
+      <div class="wa-chat-header">
+        <div class="wa-avatar">K</div>
+        <div>
+          <div class="wa-nombre">Karla G.</div>
+          <div class="wa-estado">Mixco, Guatemala</div>
+        </div>
+      </div>
+      <div class="wa-body">
+        <div class="wa-burbuja">
+          Al día 5 ya se notaba más clarito en mis codos. Ahora lo uso en el pecho también 🙏 El envío llegó rápido y pagué al recibirlo, sin riesgo para nada.
+          <div class="wa-hora">✓✓ 3:11 p.m.</div>
+        </div>
+      </div>
+      <div class="wa-verificado">✅ Compra verificada</div>
+    </div>
+
+    <div class="wa-chat">
+      <div class="wa-chat-header">
+        <div class="wa-avatar">S</div>
+        <div>
+          <div class="wa-nombre">Sofía P.</div>
+          <div class="wa-estado">Villa Nueva, Guatemala</div>
+        </div>
+      </div>
+      <div class="wa-body">
+        <div class="wa-burbuja">
+          Tenía el pecho muy oscuro de trabajar al sol todos los días. Con 2 semanas ya vi cambio real. Ahora me siento más segura con blusas 🤍
+          <div class="wa-hora">✓✓ 7:58 p.m.</div>
+        </div>
+      </div>
+      <div class="wa-verificado">✅ Compra verificada</div>
+    </div>
+
   </div>
 </section>
 
-<!-- 2. ZONA PRODUCTO + SOCIAL PROOF -->
-<section class="zona-producto">
-  <div class="producto-img-wrap">
-    <!-- IMAGEN: Frasco del sérum sobre fondo limpio -->
-    <img src="../generador-imagenes/bottle_no_bg.png" alt="Dark Knuckle Whitening Serum" />
-  </div>
-  <p class="producto-subtitulo">Sérum Profesional · Neomentes</p>
-  <h2 class="producto-nombre">Dark Knuckle Whitening Serum</h2>
-  <div class="estrellas">⭐⭐⭐⭐⭐</div>
-  <p class="resena-texto">"Por fin puedo saludar a mis clientes sin esconder mis manos"</p>
-  <p class="resena-autor">— Sofía G., Ciudad de Guatemala</p>
-  <div class="envio-badge">🚚 ENVÍO GRATIS A TODA GUATEMALA</div>
-  <ul class="producto-bullets">
-    <li>✨ Aclara en 7 días: Resultados visibles y rápidos</li>
-    <li>🛡️ Reparación Solar: Diseñado para pieles expuestas al clima tropical</li>
-    <li>💧 Fórmula no grasa: Absorción inmediata</li>
-    <li>📦 Pago contra entrega en toda Guatemala</li>
-  </ul>
-  <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
-    Pedir con Envío Gratis
-    <small>Pago al recibir · Sin tarjeta de crédito</small>
-  </a>
-</section>
-
-<!-- 3. EL PROBLEMA -->
+<!-- ══════════════════════════════════
+     SECCIÓN 3: DOLOR / PROBLEMA
+     MIDJOURNEY → guardar como: imagenes/problema-rosa.jpg
+     "Guatemalan latina woman 33 years old, market vendor, brown medium-dark skin, sitting at her market stall under harsh tropical afternoon sun, looking down at her dark rough knuckles and dark elbow with a sad quiet expression, simple floral blouse with open neckline showing darkened chest skin, candid emotional portrait, 4:5 ratio, photorealistic documentary style"
+     ══════════════════════════════════ -->
 <section class="seccion-problema">
-  <!-- IMAGEN: Mujer profesional en oficina mirando sus manos con preocupación -->
-  <img class="bg" src="imagenes/problema-nudillos.jpg" alt="Problema de manchas en manos" />
+  <img class="bg" src="imagenes/problema-nudillos.jpg" alt="Manos y codos oscuros por el sol" />
   <div class="problema-overlay"></div>
   <div class="problema-content">
-    <div class="problema-tag">El Problema</div>
+    <div class="problema-tag">¿Te identificás?</div>
     <h2 class="problema-titulo">
-      No es descuido.<br>
-      <span>Es el sol de Guatemala.</span>
+      Cada día que salís al sol...<br>
+      <span>tus manos, codos y pecho<br>se oscurecen más.</span>
     </h2>
     <p class="problema-texto">
-      Esas manchas oscuras en tus nudillos, codos y pecho no son tu culpa — son el resultado de años de exposición al sol tropical más intenso de Centroamérica. Te hacen ver con más edad y afectan tu confianza frente a tus clientes y colegas.
+      No es suciedad. No es descuido. Es el daño acumulado del sol tropical sobre tu piel.
+      Lo peor es que te acostumbrás a esconder las manos, a no usar blusas escotadas,
+      a sentirte menos bonita de lo que realmente sos.
+      Eso no es justo — y tiene solución.
     </p>
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="seccion-video">
-  <video autoplay muted loop playsinline>
-    <source src="imagenes/video-serum.mp4" type="video/mp4" />
-  </video>
-  <div class="video-caption">Dark Knuckle Whitening Serum · Neomentes Guatemala</div>
-</section>
-
-<!-- 4. LA SOLUCIÓN -->
+<!-- ══════════════════════════════════
+     SECCIÓN 4: SOLUCIÓN
+     MIDJOURNEY → guardar como: imagenes/solucion-rosa.jpg
+     "Guatemalan latina woman 33 years old, smooth radiant even-toned brown skin on hands elbows and chest, soft hopeful confident smile, wearing elegant off-shoulder blouse showing smooth neckline proudly, golden morning light, beauty lifestyle photography, femininity and confidence, 4:5 ratio, photorealistic"
+     ══════════════════════════════════ -->
 <section class="seccion-solucion">
   <div class="solucion-tag">La Solución</div>
   <h2 class="solucion-titulo">
-    Vuelve a lucir la piel joven<br>
-    <span>que el sol te arrebató.</span>
+    Tus manos pueden volver<br>
+    <span>a ser las de antes.</span>
   </h2>
   <p class="solucion-texto">
-    Imagina entrar a tu próxima reunión con la seguridad de que tu piel luce uniforme y radiante. Nuestro suero no solo aclara — repara profundamente.
+    Imaginá entrar a tu trabajo, al mercado, a una reunión familiar —
+    y extender la mano sin pensarlo dos veces. Sin vergüenza. Sin esconder nada.
+    Eso es lo que miles de mujeres guatemaltecas ya están viviendo con el Dark Knuckle Serum.
   </p>
   <div class="solucion-img">
-    <!-- IMAGEN: Mujer latina sonriendo, blazer profesional, piel uniforme -->
-    <img src="imagenes/solucion-confianza.jpg" alt="Mujer con piel radiante y confianza" />
+    <img src="imagenes/solucion-confianza.jpg" alt="Mujer con piel radiante y segura" />
   </div>
-  <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra" style="background:#7c3aed;">
+  <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
     Quiero recuperar mi piel
     <small>🚚 Envío gratis · Pago al recibir</small>
   </a>
 </section>
 
-<!-- 5. INGREDIENTES & MODO DE USO -->
-<section class="seccion-ingredientes">
-  <div class="ing-tag">Fórmula Profesional</div>
-  <h2 class="ing-titulo">
-    El <span>aliado definitivo</span><br>contra la hiperpigmentación
-  </h2>
-  <p class="ing-subtitulo">Ingredientes activos con respaldo científico</p>
+<!-- ══════════════════════════════════
+     SECCIÓN 5: PRODUCTO — INGREDIENTES / MODO USO / INVIMA
+     MIDJOURNEY → guardar como: imagenes/ingredientes-nueva.jpg
+     "Elegant beauty skincare flat lay, vitamin C orange slices, niacinamide small bottle, hyaluronic acid gel drop, amber glass dropper serum bottle, arranged on white marble with soft purple flowers, top-down view, luxury skincare brand photography, 1:1 ratio"
+     ══════════════════════════════════ -->
+<section class="seccion-producto">
+  <div class="prod-tag">Fórmula Profesional</div>
+  <h2 class="prod-titulo">Dark Knuckle<br><span>Whitening Serum</span></h2>
+  <p class="prod-subtitulo">El aliado definitivo contra la hiperpigmentación en manos, codos y pecho</p>
+
+  <div class="prod-img-wrap">
+    <img src="../generador-imagenes/bottle_no_bg.png" alt="Dark Knuckle Whitening Serum" />
+  </div>
 
   <div class="ing-cards">
     <div class="ing-card">
       <div class="ing-icon">🍊</div>
       <div>
         <div class="ing-nombre">Vitamina C Estabilizada</div>
-        <div class="ing-desc">Inhibe la producción de melanina y unifica el tono desde la primera semana de uso.</div>
+        <div class="ing-desc">Inhibe la melanina y unifica el tono de nudillos, codos y pecho desde la primera semana de uso.</div>
       </div>
     </div>
     <div class="ing-card">
       <div class="ing-icon">🔬</div>
       <div>
         <div class="ing-nombre">Niacinamida al 10%</div>
-        <div class="ing-desc">Reduce manchas oscuras, refuerza la barrera cutánea y mejora la textura de zonas rugosas.</div>
+        <div class="ing-desc">Reduce las manchas oscuras, refuerza la barrera cutánea y mejora la textura de las zonas más afectadas por el sol.</div>
       </div>
     </div>
     <div class="ing-card">
       <div class="ing-icon">💧</div>
       <div>
         <div class="ing-nombre">Ácido Hialurónico</div>
-        <div class="ing-desc">Hidratación profunda que suaviza y rellena la piel seca y áspera de nudillos y codos.</div>
+        <div class="ing-desc">Hidratación profunda que suaviza y regenera la piel seca y áspera de nudillos y codos.</div>
       </div>
     </div>
   </div>
@@ -946,30 +583,28 @@
   <div class="ing-uso">
     <div class="ing-uso-titulo">📋 Modo de Uso</div>
     <ul class="ing-uso-pasos">
-      <li>Lavar y secar bien la zona a tratar</li>
-      <li>Aplicar 2-3 gotas en la zona oscura por la noche</li>
-      <li>Masajear en círculos hasta absorción completa</li>
-      <li>⚠️ Usar bloqueador solar al día siguiente (obligatorio)</li>
+      <li>Lavá y secá bien la zona a tratar</li>
+      <li>Aplicá 2-3 gotas sobre nudillos, codos o pecho por las noches</li>
+      <li>Masajeá en círculos hasta que se absorba completamente</li>
+      <li>⚠️ Usá bloqueador solar al día siguiente (obligatorio)</li>
     </ul>
   </div>
 
-  <div style="max-width:380px;margin:0 auto 24px;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
-    <img src="imagenes/ingredientes-modouso.jpg" alt="Ingredientes y modo de uso" style="width:100%;display:block;" />
-  </div>
-
-  <div class="ing-certificacion">
+  <div class="invima-badge">
     <span>🏥</span>
-    <span>Registro sanitario vigente · Fórmulas dermatológicamente probadas</span>
+    <span>Registro sanitario vigente · Dermatológicamente probado</span>
   </div>
 
-  <br>
   <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
-    Aprovechar Oferta de Lanzamiento
-    <small>Precio especial solo por tiempo limitado</small>
+    Pedir el Sérum Ahora
+    <small>Precio especial de lanzamiento · Stock limitado</small>
   </a>
 </section>
 
-<!-- 6. TABLA COMPARATIVA -->
+<!-- ══════════════════════════════════
+     SECCIÓN 6: POR QUÉ SOMOS LOS MEJORES
+     (Tabla comparativa — no necesita imagen Midjourney)
+     ══════════════════════════════════ -->
 <section class="seccion-tabla">
   <div class="tabla-tag">Comparación</div>
   <h2 class="tabla-titulo">¿Por qué somos<br><span>los mejores?</span></h2>
@@ -983,24 +618,29 @@
     </thead>
     <tbody>
       <tr>
-        <td>Efecto en 7 días</td>
+        <td>Efecto visible en 7 días</td>
         <td class="col-nuestro check-si">✅ Sí</td>
         <td class="check-no">❌ No (meses)</td>
       </tr>
       <tr>
-        <td>Zonas Difíciles</td>
-        <td class="col-nuestro check-si">✅ Especializado en Nudillos</td>
-        <td class="check-no">❌ Solo hidratación</td>
+        <td>Aclara nudillos y codos</td>
+        <td class="col-nuestro check-si">✅ Especializado</td>
+        <td class="check-no">❌ Solo hidrata</td>
       </tr>
       <tr>
-        <td>Textura</td>
-        <td class="col-nuestro check-si">✅ Absorción rápida (no grasa)</td>
-        <td class="check-no">❌ Deja sensación pegajosa</td>
+        <td>Aclara el pecho</td>
+        <td class="col-nuestro check-si">✅ Sí</td>
+        <td class="check-no">❌ No</td>
       </tr>
       <tr>
-        <td>Fórmula Guatemala</td>
-        <td class="col-nuestro check-si">✅ Para sol intenso tropical</td>
-        <td class="check-no">❌ Fórmulas genéricas</td>
+        <td>Fórmula para sol tropical</td>
+        <td class="col-nuestro check-si">✅ Guatemala</td>
+        <td class="check-no">❌ Genérica</td>
+      </tr>
+      <tr>
+        <td>Textura no grasa</td>
+        <td class="col-nuestro check-si">✅ Absorción rápida</td>
+        <td class="check-no">❌ Pegajosa</td>
       </tr>
     </tbody>
   </table>
@@ -1010,80 +650,72 @@
   </a>
 </section>
 
-<!-- 7. ANTES / DESPUÉS + FAQ -->
+<!-- ══════════════════════════════════
+     SECCIÓN 7: ANTES Y DESPUÉS
+     MIDJOURNEY ANTES → guardar como: imagenes/antes-nudillos.jpg
+     "Close-up photo of latina woman dark hyperpigmented rough knuckles and dark elbow skin, harsh tropical daylight, real raw beauty photography, neutral background, 1:1 ratio photorealistic"
+     MIDJOURNEY DESPUÉS → guardar como: imagenes/despues-nudillos.jpg
+     "Close-up photo of latina woman smooth radiant even-toned skin on knuckles and elbow after treatment, soft warm light, glowing healthy skin, same angle, neutral background, 1:1 ratio photorealistic"
+     ══════════════════════════════════ -->
 <section class="seccion-antes-despues">
   <div class="ad-tag">Resultados Reales</div>
   <h2 class="ad-titulo">Día 1 vs <span>Día 7</span></h2>
   <div class="ad-grid">
     <div class="ad-foto">
-      <!-- IMAGEN: Nudillos oscuros día 1 -->
-      <img src="imagenes/antes-nudillos.jpg" alt="Nudillos antes día 1" />
+      <img src="imagenes/antes-nudillos.jpg" alt="Nudillos oscuros día 1" />
       <div class="ad-foto-label antes">Día 1</div>
     </div>
     <div class="ad-foto">
-      <!-- IMAGEN: Nudillos aclarados día 7 -->
-      <img src="imagenes/despues-nudillos.jpg" alt="Nudillos después día 7" />
+      <img src="imagenes/despues-nudillos.jpg" alt="Nudillos aclarados día 7" />
       <div class="ad-foto-label despues">Día 7 ✓</div>
     </div>
   </div>
-
-  <!-- FAQ -->
-  <div class="faq-lista">
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Lo puedo usar en la cara?</div>
-      <div class="faq-respuesta">No, es una fórmula potente diseñada para la piel gruesa de nudillos, codos y rodillas. Para la cara tenemos una fórmula específica.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Cuánto tiempo tarda el envío?</div>
-      <div class="faq-respuesta">De 24 a 48 horas en Ciudad de Guatemala. Al interior del país puede tardar 2-3 días hábiles.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Es seguro para piel joven?</div>
-      <div class="faq-respuesta">Totalmente. Está diseñado para mujeres de 20 años en adelante que sufren daño solar. Fórmula suave pero efectiva.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-pregunta">¿Cómo pago?</div>
-      <div class="faq-respuesta">Pago contra entrega — pagas cuando recibes el producto en tu casa u oficina. Sin tarjeta de crédito necesaria.</div>
-    </div>
-  </div>
-
   <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
     Pedir ahora con Envío Gratis
     <small>Pago al recibir · Sin riesgo</small>
   </a>
 </section>
 
-<!-- URGENCIA -->
-<div class="urgencia-bar">
-  🔥 Oferta de lanzamiento · Stock limitado <span>— Pedidos hoy, entrega mañana en Ciudad de Guatemala</span>
-</div>
+<!-- ══════════════════════════════════
+     SECCIÓN 8: FAQ
+     (Texto puro — no necesita imagen Midjourney)
+     ══════════════════════════════════ -->
+<section class="seccion-faq">
+  <div class="faq-tag">Preguntas Frecuentes</div>
+  <h2 class="faq-titulo">¿Tenés dudas?<br>Te respondemos todo.</h2>
 
-<!-- CTA FINAL -->
-<section class="seccion-cta">
-  <h2 class="cta-titulo">
-    Recupera tu confianza.<br>
-    <span>Tus manos merecen brillar.</span>
-  </h2>
-  <p class="cta-texto">
-    Únete a las mujeres guatemaltecas que ya recuperaron su piel uniforme y radiante. Sin excusas, sin esconder las manos.
-  </p>
-  <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra" style="max-width:320px;">
-    Pedir con Envío Gratis Ahora
-    <small>🚚 Entrega 24-48 hrs · Pago contra entrega</small>
+  <div class="faq-lista">
+    <div class="faq-item">
+      <div class="faq-pregunta">¿Lo puedo usar en el pecho y los codos?</div>
+      <div class="faq-respuesta">Sí, está diseñado específicamente para las zonas más afectadas por el sol: nudillos, codos y pecho. Resultados visibles en 7 días con uso constante.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-pregunta">¿Cuánto tiempo tarda el envío?</div>
+      <div class="faq-respuesta">24 a 48 horas en Ciudad de Guatemala. Al interior del país de 2 a 3 días hábiles. Te llega directo a tu casa u oficina.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-pregunta">¿Cómo es el pago?</div>
+      <div class="faq-respuesta">Pago contra entrega — pagás cuando recibís el producto. Sin tarjeta de crédito, sin adelantos, sin riesgo para vos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-pregunta">¿Cuánto dura un frasco?</div>
+      <div class="faq-respuesta">Aproximadamente 4 a 6 semanas de uso diario. Para resultados más duraderos se recomienda completar 2 ciclos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-pregunta">¿Es seguro para todo tipo de piel?</div>
+      <div class="faq-respuesta">Totalmente. Fórmula dermatológicamente probada, apta para pieles de tono oscuro y pieles dañadas por el sol tropical. Sin químicos agresivos.</div>
+    </div>
+  </div>
+
+  <a href="https://almamaya.store/products/serum-despigmentante-neomentes-007" class="btn-compra">
+    Pedir Ahora — Envío Gratis
+    <small>🚚 Pago al recibir · Entrega 24-48 hrs</small>
   </a>
   <div class="cta-garantias">
-    <div class="cta-garantia-item">
-      <span>📦</span><span>Envío gratuito a toda Guatemala</span>
-    </div>
-    <div class="cta-garantia-item">
-      <span>💳</span><span>Pago al recibir, sin tarjeta</span>
-    </div>
-    <div class="cta-garantia-item">
-      <span>🏥</span><span>Registro sanitario vigente</span>
-    </div>
-    <div class="cta-garantia-item">
-      <span>✨</span><span>Resultados visibles en 7 días</span>
-    </div>
+    <div class="cta-garantia-item"><span>📦</span><span>Envío gratuito a toda Guatemala</span></div>
+    <div class="cta-garantia-item"><span>💳</span><span>Pago al recibir, sin tarjeta</span></div>
+    <div class="cta-garantia-item"><span>🏥</span><span>Registro sanitario vigente</span></div>
+    <div class="cta-garantia-item"><span>✨</span><span>Resultados visibles en 7 días</span></div>
   </div>
 </section>
 
